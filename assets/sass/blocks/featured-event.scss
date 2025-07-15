@@ -1,0 +1,56 @@
+.st_featured_event  {
+	overflow-x: hidden;
+}
+.st_featured_event_inner {
+	background-color: #fff;
+	padding: 4rem;
+	border-radius: 12px;
+	border: 2px solid #F0EEEB;
+	gap: 4rem;
+	position: relative;
+	@include grid-2;
+	@include tab-max {
+		@include col-1;
+	}
+		&:before {
+			content: url(../../assets/icons/leafs.svg);
+			position: absolute;
+			top: 0;
+			right: 0;
+			transform: translate(60%, -37%);
+			z-index: -1;
+			width: 18rem;
+		}
+		&:after {
+			content: url(../../assets/icons/plus-signs.svg);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transform: translate(-100%, 60%);
+			width: 8rem;
+		}
+	.fe_left {
+		@include tab-min {
+			padding: 4rem;
+		}
+	}
+	h2 {
+		margin-block: 24px;
+	}
+	.featured_event_bottom {
+		@include flex;
+		gap: 4.8rem;
+		margin-top: 4.8rem;
+		.left {
+			display: flex;
+			align-items: center;
+			svg {
+				flex-shrink: 0;
+				margin-right: 16px;
+			}
+			.prefix {
+				display: block;
+			}
+		}
+	}
+}

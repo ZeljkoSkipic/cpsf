@@ -1,0 +1,22 @@
+.st_logos_title {
+	text-align: center;
+}
+
+.st_logos_inner {
+	@include grid-5;
+	align-items: center;
+	margin-top: var(--space-3);
+	gap: 4rem;
+	@include tab-only {
+		@include col-3;
+	}
+	@include mob-only {
+		@include col-1;
+	}
+	.logo {
+		max-height: 46px;
+		img {
+			object-fit: contain;
+		}
+	}
+}

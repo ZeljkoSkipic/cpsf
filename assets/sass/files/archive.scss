@@ -1,0 +1,36 @@
+.posts_grid {
+	@include flex-between;
+	h1 {
+		width: 100%;
+	}
+	.grid_item {
+		width: 31%;
+		margin-bottom: 3%;
+		@include tab-only {
+			width: 48%;
+		}
+		@include mob-only {
+			width: 100%;
+		}
+		.gi_title {
+			margin-bottom: 1.8rem;
+			font-size: var(--font-size-5);
+			a {
+				color: var(--t-color);
+			}
+		}
+		.gi_image {
+			aspect-ratio: 16 / 9;
+			margin-bottom: 8px;
+			img {
+				height: 100%;
+			}
+		}
+	}
+	.posts-navigation {
+		width: 100%;
+		.nav-links {
+			@include flex-between;
+		}
+	}
+}

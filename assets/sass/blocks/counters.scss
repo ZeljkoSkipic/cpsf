@@ -1,0 +1,32 @@
+.st_counters_inner {
+	@include grid-4;
+	gap: 4rem;
+	@include tab-only {
+		@include col-2;
+	}
+	@include mob-only {
+		@include col-1;
+	}
+	.st_counter {
+		text-align: center;
+		img {
+			width: 35px;
+		}
+		.counter {
+			font-size: 7.2rem;
+			margin: 0;
+			color: #29353B;
+			font-family: $primary;
+			font-weight: 700;
+		}
+		.counter_text {
+			color: var(--color-1);
+			margin: 0;
+		}
+	}
+}
+
+.counters_button_wrap {
+	padding-top: var(--space-3);
+	text-align: center;
+}

@@ -1,0 +1,8 @@
+.st_contact_block_inner {
+	@include flex-between;
+	> div {
+		@include limbo-min {
+			width: 48%;
+		}
+	}
+}

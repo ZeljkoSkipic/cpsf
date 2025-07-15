@@ -1,0 +1,35 @@
+.st_instagram_top {
+	@include flex-between;
+	align-items: center;
+	margin-bottom: var(--space-3);
+	@include tab-max {
+		flex-direction: column;
+	}
+	.title-2 {
+		font-family: $primary;
+		color: var(--t-color);
+		@include limbo-min {
+			margin-block: 0;
+		}
+		@include tab-max {
+			margin-top: 0;
+			text-align: center
+		}
+	}
+}
+
+.st_instagram_images {
+	@include grid-5;
+	gap: 4rem;
+	@include tab-only {
+		@include col-2;
+	}
+	@include mob-only {
+		@include col-1;
+	}
+	img {
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		border-radius: 12px;
+	}
+}

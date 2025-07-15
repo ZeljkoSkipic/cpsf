@@ -1,0 +1,47 @@
+.st_cta_inner {
+	background-color: var(--color-1);
+	border-radius: 12px;
+	padding: 4rem 4rem 6rem var(--space-2);
+	@include flex-between;
+	position: relative;
+	@include tab-max {
+		flex-direction: column;
+		padding: var(--space-4);
+		.st_cta_left {
+			z-index: 2;
+		}
+		.st_cta_right {
+			position: absolute;
+			max-width: calc(100% - 2 * var(--space-4));
+			opacity: 0.6;
+			bottom: 4rem;
+			z-index: 1;
+			max-height: calc(100% - 8rem);
+			overflow: hidden;
+		}
+	}
+	@include limbo-min {
+		.st_cta_left {
+			width: 58%;
+			padding-block: 4rem;
+		}
+		.st_cta_right {
+			width: 34%;
+		}
+	}
+	.st_cta_title {
+		color: #fff;
+		@include title;
+		@include mob-only {
+			font-size: var(--font-size-2);
+		}
+	}
+	.st_cta_text {
+		color: #fff;
+		font-size: 20px;
+		margin-bottom: 4.8rem;
+		@include mob-only {
+			font-size: 16px;
+		}
+	}
+}

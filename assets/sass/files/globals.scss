@@ -1,0 +1,104 @@
+body {
+	background-color: #FAF9F7;
+}
+
+.container {
+	width: var(--site-width);
+	max-width: var(--site-max-width);
+	margin-inline: auto;
+}
+
+.c-wide {
+	width: calc(100% - 8rem);
+	margin-inline: auto;
+}
+
+// Fix user agent spacings
+
+h1, h2  {
+	margin-bottom: var(--t-space-1);
+}
+
+h3, h4, h5, h6 {
+	margin-bottom: var(--t-space-2);
+}
+
+.page-title {
+	font-size: 7.2rem;
+}
+
+.title-1 {
+	font-size: var(--font-size-1);
+}
+
+.title-2 {
+	font-size: var(--font-size-2);
+}
+
+.title-3 {
+	font-size: var(--font-size-3);
+}
+
+.title-4 {
+	font-size: var(--font-size-4);
+}
+
+.title-5 {
+	font-size: var(--font-size-5);
+}
+
+.title-6 {
+	font-size: var(--font-size-6);
+}
+
+.st_block {
+	position: relative;
+}
+
+a {
+	color: var(--link-color)
+}
+
+.prefix {
+	color: #819193;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+
+.error404 {
+	article {
+		text-align: center;
+		img {
+			width: auto;
+			max-width: 30rem;
+		}
+		h1 {
+			font-size: 20rem;
+		}
+		h2 {
+			font-size: 5rem;
+		}
+		.text404 {
+			font-size: 30px;
+			margin-block: var(--space-4);
+		}
+		@include mob-only {
+			h1 {
+				font-size: 15rem;
+			}
+			.text404 {
+				font-size: 25px;
+			}
+		}
+	}
+}
+
+
+.wp-block-table td, .wp-block-table th {
+	line-height: 1.2
+}
+
+.wp-block-table table {
+	margin-bottom: 1em;
+}

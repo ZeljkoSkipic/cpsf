@@ -1,0 +1,62 @@
+@font-face {
+	font-family: PT Serif;
+	src: url('../fonts/PTSerif-Bold.woff2');
+	src: url('../fonts/PTSerif-Bold.woff2') format('woff2'),
+    url('../fonts/PTSerif-Bold.ttf') format('truetype');
+	font-style: normal;
+ 	font-weight: 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Libre Franklin;
+	src: url('../fonts/LibreFranklin-Regular.woff2');
+	src: url('../fonts/LibreFranklin-Regular.woff2') format('woff2'),
+    url('../fonts/LibreFranklin-Regular.ttf') format('truetype');
+	font-style: normal;
+ 	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Libre Franklin;
+	src: url('../fonts/LibreFranklin-Medium.woff2');
+	src: url('../fonts/LibreFranklin-Medium.woff2') format('woff2'),
+    url('../fonts/LibreFranklin-Medium.ttf') format('truetype');
+	font-style: normal;
+ 	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Libre Franklin;
+	src: url('../fonts/LibreFranklin-SemiBold.woff2');
+	src: url('../fonts/LibreFranklin-SemiBold.woff2') format('woff2'),
+    url('../fonts/LibreFranklin-SemiBold.ttf') format('truetype');
+	font-style: normal;
+ 	font-weight: 600;
+	font-display: swap;
+}
+
+
+$primary: PT Serif, sans-serif;
+$secondary: Libre Franklin, sans-serif;
+
+body {
+	@include limbo-min {
+		font-size: 18px;
+	}
+	@include tab-max {
+		font-size: 16px;
+	}
+	font-family: $secondary;
+	color: var(--b-color);
+	line-height: var(--body-line-height);
+	font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $primary;
+	color: var(--t-color);
+	line-height: var(--title-line-height);
+}

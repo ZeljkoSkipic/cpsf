@@ -1,0 +1,43 @@
+.st_home_hero {
+	text-align: center;
+	h1 {
+		max-width: 77rem;
+		margin-inline: auto;
+	}
+	.home_hero_text {
+		margin-block: 2.4rem 3.2rem;
+	}
+	.checkmarks {
+		@include flex-between;
+		@include clean-list;
+		li {
+			display: flex;
+			svg {
+				width: 24p;
+				margin-right: 14px;
+				flex-shrink: 0;
+			}
+		}
+	}
+	.home_hero_video {
+		overflow: hidden;
+		border-radius: 12px;
+		position: relative;
+	}
+	.play-overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		@include flex-center;
+		path {
+			@include st;
+		}
+		&:hover {
+			path {
+				fill: var(--color-1);
+			}
+		}
+	}
+}

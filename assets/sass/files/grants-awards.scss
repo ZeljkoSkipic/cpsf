@@ -1,0 +1,219 @@
+// Archive
+
+.grants_hero  {
+	@include flex-between;
+	align-items: flex-end;
+	h1 {
+		font-size: 7.2rem;
+	}
+	.left {
+		width: 57%;
+	}
+	.right {
+		width: calc(43% - 4rem);
+		p {
+			font-size: 20px;
+		}
+	}
+	.bottom {
+		margin-top: var(--space-2);
+		img {
+			border-radius: 12px;
+		}
+	}
+}
+
+.grants_item {
+	@include flex-between;
+	align-items: center;
+	background-color: #fff;
+	border: 2px solid #F0EEEB;
+	padding: 4rem;
+	border-radius: 12px;
+	&:not(:last-child) {
+		margin-bottom: var(--space-2);
+	}
+	&:nth-child(even) {
+		flex-direction: row-reverse;
+	}
+	@include tab-max {
+		flex-direction: column;
+		.grants_item_content {
+			margin-bottom: 4rem;
+		}
+	}
+	@include limbo-min {
+		> div {
+			width: calc(50% - 2rem);
+		}
+	}
+	.grants_item_title {
+		margin-bottom: 16px;
+	}
+	.grants_item_description {
+		margin-bottom: var(--space-4);
+	}
+	.grants_item_deadline {
+		display: flex;
+		align-items: center;
+		svg {
+			margin-right: 19px;
+			flex-shrink: 0
+		}
+		.deadline_content {
+			@include flex-col;
+		}
+		.deadline_date {
+			color: var(--t-color);
+			font-weight: 600;
+		}
+	}
+	.grants_item_button {
+		margin-top: var(--space-4);
+	}
+	img {
+		border-radius: 12px;
+	}
+}
+
+
+// Single Grant Hero
+
+.st_grant_hero {
+	border-bottom: 2px solid #F0EEEB;
+}
+.st_grant_hero_inner {
+	@include flex-between;
+	> div {
+		width: calc(50% - 2rem);
+	}
+	.left {
+		padding-right: 4rem;
+	}
+	.grant_description {
+		font-size: 20px;
+		margin-bottom: var(--space-4);
+	}
+	.grant_deadline {
+		display: flex;
+		align-items: center;
+		svg {
+			margin-right: 19px;
+			flex-shrink: 0
+		}
+		.deadline_content {
+			@include flex-col;
+		}
+		.deadline_date {
+			color: var(--t-color);
+			font-weight: 600;
+		}
+	}
+	.grant_button {
+		margin-top: var(--space-4);
+	}
+	img {
+		border-radius: 12px;
+	}
+}
+
+
+// Grant Acnhors
+
+.st_grant_anchors {
+	border-bottom: 2px solid #F0EEEB;
+}
+
+.st_grant_anchors_inner {
+	@include flex-center;
+	padding-block: 2rem;
+	a {
+		color: var(--t-color);
+		font-weight: 600;
+		background-repeat: no-repeat;
+		background-position: center left;
+		background-size: 24px;
+		padding-left: 36px;
+		&:not(:last-child) {
+			margin-right: var(--space-4);
+		}
+		&.description {
+			background-image: url(../icons/description.svg);
+		}
+		&.report {
+			background-image: url(../icons/report.svg);
+		}
+		&.resources {
+			background-image: url(../icons/resources.svg);
+		}
+		&.past {
+			background-image: url(../icons/grants.svg);
+		}
+		&.nominate {
+			background-image: url(../icons/nominate.svg);
+		}
+		&.winners {
+			background-image: url(../icons/award.svg);
+		}
+	}
+}
+
+
+// Grant Section - Global
+
+.st_grant_section {
+	border-bottom: 2px solid #F0EEEB;
+}
+
+.st_grant_section_inner {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 4rem;
+	.grant_section_left {
+		padding-right: 4rem;
+	}
+	.grant_section_right {
+		p:first-child {
+			margin-top: 0;
+		}
+	}
+	.gr_button {
+		margin-top: var(--space-4);
+	}
+}
+
+// Grant Resources
+
+.grant_resource {
+	background-color: #F0EEEB;
+	padding: 24px;
+	border-radius: 12px;
+	@include flex-between;
+	align-items: center;
+	margin-top: var(--space-4);
+	.resource_info {
+		@include flex;
+		align-items: center;
+		svg {
+			margin-right: 27.5px;
+			flex-shrink: 0;
+		}
+		.resource_file {
+			@include flex-col;
+			.filename {
+				color: var(--t-color);
+				font-weight: 600;
+				font-size: 20px;
+			}
+		}
+	}
+	a {
+		color: #007F9B;
+		display: flex;
+		align-items: center;
+		svg {
+			flex-shrink: 0;
+			margin-right: 11px;
+		}
+	}
+}

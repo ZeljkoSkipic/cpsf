@@ -1,0 +1,29 @@
+.st_accordion-item {
+	@include bs;
+	margin-bottom: 2rem;
+	@include br1;
+	.st_accordion-header {
+		font-size: var(--font-size-4);
+		color: var(--color-2);
+		cursor: pointer;
+		padding: 1rem 3rem;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 0;
+		svg {
+			transition: var(--st)
+		}
+	}
+	.st_accordion-body {
+	  padding: 1rem 3rem 2rem;
+	}
+	&.open {
+	  .st_accordion-header {
+		svg {
+		  transform: scaleY(-1);
+		}
+	  }
+	}
+  }

@@ -1,0 +1,147 @@
+.wpforms-container {
+	.wpforms-field {
+		.wpforms-field-label {
+			font-size: 18px;
+			background-image: url(../icons/contact/file-text.svg);
+			background-position: center left;
+			background-repeat: no-repeat;
+			background-size: 20px;
+			padding-left: 28px;
+
+		}
+		input, textarea, select {
+			border-width: 0 0 1px 0;
+			font-size: 18px;
+			padding: 1rem;
+			@include mob-only {
+				font-size: 16px;
+			}
+
+			option {
+				font-size: 16px;
+			}
+			&:focus, &.wpforms-valid {
+				outline: none;
+				border-color: var(--color-1);
+			}
+			&.wpforms-error {
+				border-width: 0 0 1px 0!important;
+			}
+			&::placeholder {
+				font-size: 16px;
+			}
+		}
+		select {
+			cursor: pointer;
+			background-image: url(../icons/contact/chevron-down.svg);
+			background-position: top 1.3rem right 1rem;
+		}
+		.wpforms-error[role="alert"] {
+			font-size: 12px;
+		}
+
+		&.wpforms-field-name .wpforms-field-label {
+			background-image: url(../icons/contact/user.svg);
+		}
+		&.wpforms-field-email .wpforms-field-label {
+			background-image: url(../icons/contact/mail.svg);
+		}
+		&.wpforms-field-phone .wpforms-field-label {
+			background-image: url(../icons/contact/smartphone.svg);
+		}
+		&.wpforms-field-textarea .wpforms-field-label {
+			background-image: url(../icons/contact/pencil.svg);
+		}
+		&.wpforms-field-address .wpforms-field-label {
+			background-image: url(../icons/contact/map-pin.svg);
+		}
+		&.wpforms-field-date-time .wpforms-field-label {
+			background-image: url(../icons/contact/calendar.svg);
+		}
+		&.wpforms-field-checkbox .wpforms-field-label {
+			background-image: url(../icons/contact/check-square.svg);
+			margin-bottom: 1rem
+		}
+		&.wpforms-field-radio .wpforms-field-label {
+			background-image: url(../icons/contact/check-square.svg);
+			margin-bottom: 1rem
+		}
+	}
+
+	.wpforms-field-checkbox, .wpforms-field-radio {
+		&.wpforms-list-inline {
+			ul {
+				display: flex;
+				li {
+					margin-right: 3rem
+				}
+			}
+		}
+		&.wpforms-list-2-columns {
+			ul {
+				display: grid;
+				@include tab-min {
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+		}
+		&.wpforms-list-3-columns {
+			ul {
+				display: grid;
+				@include limbo-min {
+					grid-template-columns: 1fr 1fr 1fr;
+				}
+				@include tab-only {
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+		}
+		ul {
+			@include clean-list;
+
+			li {
+				font-size: 16px;
+				input {
+					display: none;
+				}
+				label {
+
+					background-size: 18px;
+					background-position: center left;
+					background-repeat: no-repeat;
+					padding-left: 24px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.wpforms-field-checkbox {
+		ul {
+			li {
+				label {
+					background-image: url(../icons/square.svg);
+				}
+				input:checked + label {
+					background-image: url(../icons/check-square.svg);
+				}
+			}
+		}
+	}
+	.wpforms-field-radio {
+		ul {
+			li {
+				label {
+					background-image: url(../icons/contact/circle.svg);
+				}
+				input:checked + label {
+					background-image: url(../icons/contact/check-circle.svg);
+				}
+			}
+		}
+	}
+
+	.wpforms-submit {
+		@include btn-1;
+		cursor: pointer;
+	}
+}
