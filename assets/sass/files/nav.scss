@@ -45,18 +45,26 @@
 	.menu-toggle {
 		display: none;
 	}
+	.menu-main-menu-container {
+		margin-left: 4.8rem;
+	}
+	.menu-main-menu-container, .main-navigation, #primary-menu {
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
 	.header-main {
 		z-index: 9;
 		position: relative;
+		display: flex;
 		.header-main_inner {
 			@include flex;
-			justify-content: space-between;
 			align-items: center;
-			padding-block: 1rem;
 			position: relative;
 			.site-logo {
-				width: 200px;
+				width: 180px;
 				margin: 0;
+				padding-top: 2rem;
 				img {
 					object-fit: contain;
 					height: auto;
@@ -131,6 +139,10 @@
 				}
 			}
 			> li {
+				padding-top: 2rem;
+				height: 100%;
+				display: flex;
+				align-items: center;
 				&:not(:last-child) {
 					margin-right: 6rem;
 				}
@@ -177,4 +189,20 @@
 		}
 	}
 
+}
+
+.nav_buttons {
+	padding-top: 4rem;
+	margin-left: auto;
+	a {
+		@include btn;
+	}
+	.button_1 {
+		color: var(--color-2);
+	}
+	.button_2 {
+		border-color: var(--color-1);
+		background-color: var(--color-1);
+		margin-left: 3.2rem;
+	}
 }

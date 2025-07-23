@@ -61,10 +61,10 @@
         },
         {
             "key": "field_686fa052b652a",
-            "label": "Form",
+            "label": "Form Shortcode",
             "name": "nomination_form",
             "aria-label": "",
-            "type": "post_object",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -73,20 +73,12 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "wpforms"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "return_format": "object",
-            "multiple": 0,
-            "allow_null": 0,
+            "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -107,5 +99,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752146209
+    "modified": 1752748332
 }

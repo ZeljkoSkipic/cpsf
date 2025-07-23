@@ -96,3 +96,4 @@
 			</div>
 		</div>
 	</header><!-- #masthead -->
+	<?php get_template_part('template-parts/mega-menu'); ?>

@@ -101,18 +101,6 @@ function stier_admin_styles()
 
 add_action('admin_enqueue_scripts', 'stier_admin_styles');
 
-// Block scripts
-
-add_action('enqueue_block_editor_assets', function () {
-	wp_enqueue_script(
-		'acf-campaign',
-		get_template_directory_uri() . '/assets/js/admin/acf-campaign.js',
-		['acf-input', 'jquery'],
-		null,
-		true
-	);
-});
-
 
 // Include Custom Menu Walker
 require get_template_directory() . '/includes/custom-menu-walker.php';
@@ -176,3 +164,12 @@ add_action('init', function () {
 		remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
 	}
 });
+
+add_filter( 'gform_disable_css', '__return_true' );
+
+/* Change Gravity Forms default ajax spinner */
+add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
+function spinner_url( $image_src, $form ) {
+    // Your custom ajax spinner URL here
+    return  '/wp-content/themes/cpsf/assets/icons/loader.svg';
+}

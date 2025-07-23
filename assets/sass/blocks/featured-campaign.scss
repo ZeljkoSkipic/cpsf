@@ -58,7 +58,7 @@
 	}
 	.fc_right {
 		position: relative;
-		.goal {
+		.gwpm-container {
 			width: 100%;
 			position: absolute;
 			bottom: 2rem;
@@ -68,20 +68,20 @@
 			border-radius: 12px;
 			padding: 16px;
 		}
-		.goal-details-amount {
-			@include flex-between;
+		.gwpm-count, .gwpm-goal {
 			font-weight: 600;
 			color: #29353B;
 		}
-		.goal-details-current {
+		.gwpm-meter {
+			margin-top: 8px;
+			height: 8px;
+			order: 3;
 
-		}
-		.goal-bar {
-			margin-top: 16px;
-			div {
+			.gwpm-fill {
 				background-color: #71BC59;
 				border-radius: 16px;
 			}
 		}
+
 	}
 }

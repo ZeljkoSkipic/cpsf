@@ -61,7 +61,7 @@
         },
         {
             "key": "field_686e375f37d18",
-            "label": "Grant Not Active",
+            "label": "Not Active Notice",
             "name": "grant_not_active",
             "aria-label": "",
             "type": "text",
@@ -174,5 +174,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752054273
+    "modified": 1752748145
 }

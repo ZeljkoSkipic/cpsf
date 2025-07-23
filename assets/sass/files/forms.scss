@@ -1,147 +1,224 @@
-.wpforms-container {
-	.wpforms-field {
-		.wpforms-field-label {
-			font-size: 18px;
-			background-image: url(../icons/contact/file-text.svg);
-			background-position: center left;
-			background-repeat: no-repeat;
-			background-size: 20px;
-			padding-left: 28px;
+.gfield {
+	&.cpsf_form_sec_title  {
+		color: var(--t-color);
+		font-size: 24px;
+		font-weight: 600;
+	}
+	&.gfield--type-text, &.gfield--type-phone, &.gfield--type-email, &.gfield--type-address, &.gfield--type-textarea, &.gfield--type-product, &.gfield--type-select {
+		input, select, textarea {
+			font-size: 16px;
+			border-radius: 0;
+			min-height: 4.8rem;
+		}
+		input, textarea {
+			padding: 12px;
 
 		}
-		input, textarea, select {
-			border-width: 0 0 1px 0;
-			font-size: 18px;
-			padding: 1rem;
-			@include mob-only {
-				font-size: 16px;
-			}
-
+		select {
+			padding-inline: 12px;
+			display: flex;
+			align-items: center;
 			option {
 				font-size: 16px;
 			}
-			&:focus, &.wpforms-valid {
-				outline: none;
-				border-color: var(--color-1);
-			}
-			&.wpforms-error {
-				border-width: 0 0 1px 0!important;
-			}
-			&::placeholder {
-				font-size: 16px;
-			}
-		}
-		select {
-			cursor: pointer;
-			background-image: url(../icons/contact/chevron-down.svg);
-			background-position: top 1.3rem right 1rem;
-		}
-		.wpforms-error[role="alert"] {
-			font-size: 12px;
 		}
 
-		&.wpforms-field-name .wpforms-field-label {
-			background-image: url(../icons/contact/user.svg);
-		}
-		&.wpforms-field-email .wpforms-field-label {
-			background-image: url(../icons/contact/mail.svg);
-		}
-		&.wpforms-field-phone .wpforms-field-label {
-			background-image: url(../icons/contact/smartphone.svg);
-		}
-		&.wpforms-field-textarea .wpforms-field-label {
-			background-image: url(../icons/contact/pencil.svg);
-		}
-		&.wpforms-field-address .wpforms-field-label {
-			background-image: url(../icons/contact/map-pin.svg);
-		}
-		&.wpforms-field-date-time .wpforms-field-label {
-			background-image: url(../icons/contact/calendar.svg);
-		}
-		&.wpforms-field-checkbox .wpforms-field-label {
-			background-image: url(../icons/contact/check-square.svg);
-			margin-bottom: 1rem
-		}
-		&.wpforms-field-radio .wpforms-field-label {
-			background-image: url(../icons/contact/check-square.svg);
-			margin-bottom: 1rem
+	}
+	> label, > legend {
+		&.gform-field-label {
+			font-weight: 700;
+			color: #000;
+			font-size: 16px;
+			margin-bottom: 8px;
+			display: flex;
 		}
 	}
+}
 
-	.wpforms-field-checkbox, .wpforms-field-radio {
-		&.wpforms-list-inline {
-			ul {
-				display: flex;
-				li {
-					margin-right: 3rem
-				}
-			}
-		}
-		&.wpforms-list-2-columns {
-			ul {
-				display: grid;
-				@include tab-min {
-					grid-template-columns: 1fr 1fr;
-				}
-			}
-		}
-		&.wpforms-list-3-columns {
-			ul {
-				display: grid;
-				@include limbo-min {
-					grid-template-columns: 1fr 1fr 1fr;
-				}
-				@include tab-only {
-					grid-template-columns: 1fr 1fr;
-				}
-			}
-		}
-		ul {
-			@include clean-list;
-
-			li {
-				font-size: 16px;
-				input {
-					display: none;
-				}
-				label {
-
-					background-size: 18px;
-					background-position: center left;
-					background-repeat: no-repeat;
-					padding-left: 24px;
-					cursor: pointer;
-				}
-			}
+.gfield--type-address {
+	span {
+		label {
+			font-size: 14px;
+			margin-bottom: 8px;
+			display: flex;
+			color: #222;
 		}
 	}
-	.wpforms-field-checkbox {
-		ul {
-			li {
-				label {
-					background-image: url(../icons/square.svg);
-				}
-				input:checked + label {
-					background-image: url(../icons/check-square.svg);
-				}
-			}
-		}
-	}
-	.wpforms-field-radio {
-		ul {
-			li {
-				label {
-					background-image: url(../icons/contact/circle.svg);
-				}
-				input:checked + label {
-					background-image: url(../icons/contact/check-circle.svg);
-				}
-			}
-		}
-	}
+}
 
-	.wpforms-submit {
-		@include btn-1;
+.gfield_radio {
+	display: grid;
+	gap: 16px;
+}
+
+.gfield_checkbox {
+	input {
+		display: none;
+	}
+	label {
+		background-image: url(../icons/square.svg);
+		background-repeat: no-repeat;
+		background-position: center left;
+		padding-left: 26px;
+		background-size: 18px;
+		font-size: 16px;
+		color: #000000;
+		font-weight: 400;
 		cursor: pointer;
+	}
+	input:checked + label{
+		background-image: url(../icons/check-square.svg);
+	}
+}
+
+.gfield--input-type-html {
+	font-size: 16px;
+	margin-top: -16px;
+}
+
+fieldset {
+	padding: 0;
+	border: 0;
+	&.gfield--type-radio {
+		input {
+			display: none;
+		}
+		.gchoice  {
+			all: unset;
+		}
+		input:checked + label {
+			&:after {
+				background-image: url(../icons/donate-check-circle.svg);
+			}
+		}
+		label {
+			cursor: pointer;
+			width: 100%;
+			display: flex;
+			border: 1px solid #000;
+			justify-content: space-between;
+			box-sizing: border-box;
+			align-items: center;
+			margin-left: 0;
+			padding: 12px;
+			&:before {
+				width: 24px;
+				height: 24px;
+				flex-shrink: 0;
+				margin-right: 6px;
+			}
+			&:after {
+				content: "";
+				display: inline-flex;
+				background-image: url(../icons/donate-circle.svg);
+				width: 18px;
+				height: 18px;
+				background-repeat: no-repeat;
+				background-size: contain;
+				margin-left: 6px;
+				flex-shrink: 0;
+			}
+		}
+		legend {
+			&.gform-field-label {
+				font-weight: 700;
+				color: #000;
+				font-size: 16px;
+				margin-bottom: 8px;
+			}
+		}
+	}
+}
+
+.gfield_description  {
+	&.instruction {
+		font-size: 16px;
+		color: #000;
+		font-style: italic;
+	}
+}
+
+
+input {
+	&.gform_next_button, &[type='submit'], &.gform_previous_button  {
+		border-radius: 0;
+		font-size: 16px;
+		padding: 14px 24px;
+		cursor: pointer;
+		margin-top: 4.2rem;
+	}
+	&.gform_next_button, &[type='submit']  {
+		background-color: #000;
+		color: #fff;
+	}
+	&.gform_previous_button {
+		background-color: transparent;
+	}
+}
+
+.gform_required_legend {
+	font-size: 16px;
+	font-style: italic;
+}
+
+.gform_submission_error  {
+	color: red;
+	font-size: 16px;
+}
+.gfield_validation_message {
+	color: red;
+	font-size: 12px;
+}
+.gfield_required_asterisk {
+	color: red;
+}
+
+.gform_ajax_spinner {
+	height: 64px;
+	max-width: 100%;
+	width: 128px;
+	margin: auto;
+	object-fit: contain;
+}
+
+.gform_validation_container {
+	display: none !important;
+    left: -9000px;
+    position: absolute !important;
+}
+
+.gfield--type-total, .gfield_visibility_hidden, .hidden_label legend.gform-field-label {
+	display: none!important;
+}
+
+
+.gform_fields  {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	gap: 21px 16px;
+	@include mob-only {
+		gap: 8px;
+	}
+	.gfield {
+		grid-column: 1 / 13;
+		@include tab-min {
+			&.gfield--width-half {
+				grid-column: span 6;
+			}
+			&.gfield--width-third {
+				grid-column: span 4;
+			}
+			&.gfield--width-quarter {
+				grid-column: span 3;
+			}
+			input {
+				&.medium {
+					width: calc(50% - 8px);
+				}
+				&.small {
+					width: calc(33% - 8px);
+				}
+			}
+		}
 	}
 }

@@ -78,7 +78,7 @@ const watchPhp = './**/*.php';
 
 // >>>>> Zip file config.
 // Must have.zip at the end.
-const zipName = 's-tier.zip';
+const zipName = 'cpsf.zip';
 
 // Must be a folder outside of the zip folder.
 const zipDestination = './../'; // Default: Parent folder.

@@ -1,0 +1,233 @@
+// Archive
+
+.gas_hero  {
+	@include flex-between;
+	align-items: flex-end;
+	h1 {
+		font-size: 7.2rem;
+	}
+	.left {
+		width: 57%;
+	}
+	.right {
+		width: calc(43% - 4rem);
+		p {
+			font-size: 20px;
+		}
+	}
+	.bottom {
+		margin-top: var(--space-2);
+		img {
+			border-radius: 12px;
+		}
+	}
+}
+
+.gas_item {
+	@include flex-between;
+	align-items: center;
+	background-color: #fff;
+	border: 2px solid #F0EEEB;
+	padding: 4rem;
+	border-radius: 12px;
+	&:not(:last-child) {
+		margin-bottom: var(--space-2);
+	}
+	&:nth-child(even) {
+		flex-direction: row-reverse;
+	}
+	@include tab-max {
+		flex-direction: column;
+		.gas_item_content {
+			margin-bottom: 4rem;
+		}
+	}
+	@include limbo-min {
+		> div {
+			width: calc(50% - 2rem);
+		}
+	}
+	.gas_item_title {
+		margin-bottom: 16px;
+	}
+	.gas_item_description {
+		margin-bottom: var(--space-4);
+	}
+	.gas_item_deadline {
+		display: flex;
+		align-items: center;
+		svg {
+			margin-right: 19px;
+			flex-shrink: 0
+		}
+		.deadline_content {
+			@include flex-col;
+		}
+		.deadline_date {
+			color: var(--t-color);
+			font-weight: 600;
+		}
+	}
+	.gas_item_button {
+		margin-top: var(--space-4);
+	}
+	img {
+		border-radius: 12px;
+	}
+}
+
+
+// Single gas Hero
+
+.st_gas_hero {
+	border-bottom: 2px solid #F0EEEB;
+}
+.st_gas_hero_inner {
+	@include flex-between;
+	> div {
+		width: calc(50% - 2rem);
+	}
+	.left {
+		padding-right: 4rem;
+	}
+	.gas_description {
+		font-size: 20px;
+		margin-bottom: var(--space-4);
+	}
+	.gas_deadline {
+		display: flex;
+		align-items: center;
+		svg {
+			margin-right: 19px;
+			flex-shrink: 0
+		}
+		.deadline_content {
+			@include flex-col;
+		}
+		.deadline_date {
+			color: var(--t-color);
+			font-weight: 600;
+		}
+	}
+	.gas_button {
+		margin-top: var(--space-4);
+	}
+	img {
+		border-radius: 12px;
+	}
+}
+
+
+// gas Acnhors
+
+.st_gas_anchors {
+	border-bottom: 2px solid #F0EEEB;
+}
+
+.st_gas_anchors_inner {
+	@include flex-center;
+	padding-block: 2rem;
+	a {
+		color: var(--t-color);
+		font-weight: 600;
+		background-repeat: no-repeat;
+		background-position: center left;
+		background-size: 24px;
+		padding-left: 36px;
+		&:not(:last-child) {
+			margin-right: var(--space-4);
+		}
+		&.description {
+			background-image: url(../icons/description.svg);
+		}
+		&.report {
+			background-image: url(../icons/report.svg);
+		}
+		&.resources {
+			background-image: url(../icons/resources.svg);
+		}
+		&.past {
+			background-image: url(../icons/gas.svg);
+		}
+		&.nominate {
+			background-image: url(../icons/nominate.svg);
+		}
+		&.winners {
+			background-image: url(../icons/award.svg);
+		}
+	}
+}
+
+
+// GAS Section - Global
+
+.st_gas_section {
+	border-bottom: 2px solid #F0EEEB;
+}
+
+.st_gas_section_inner {
+	@include tab-min {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 4rem;
+	.gas_section_left {
+		padding-right: 4rem;
+	}
+	}
+	.gas_section_right {
+		p:first-child {
+			margin-top: 0;
+		}
+	}
+	.gr_button {
+		margin-top: var(--space-4);
+	}
+}
+
+// gas Resources
+
+.gas_resource {
+	background-color: #F0EEEB;
+	padding: 24px;
+	border-radius: 12px;
+	@include flex-between;
+	align-items: center;
+	margin-top: var(--space-4);
+	.resource_info {
+		@include flex;
+		align-items: center;
+		svg {
+			margin-right: 27.5px;
+			flex-shrink: 0;
+		}
+		.resource_file {
+			@include flex-col;
+			.filename {
+				color: var(--t-color);
+				font-weight: 600;
+				font-size: 20px;
+			}
+		}
+	}
+	a {
+		color: #007F9B;
+		display: flex;
+		align-items: center;
+		svg {
+			flex-shrink: 0;
+			margin-right: 11px;
+		}
+	}
+}
+
+
+// Nominate
+
+.st_nominate {
+	.gas_section_right {
+		background-color: #fff;
+		padding: 24px 32px;
+		border: 1px solid #ccc;
+		border-radius: 12px;
+	}
+}

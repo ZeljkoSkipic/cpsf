@@ -1,0 +1,51 @@
+.past_winners_head {
+	@include flex-between;
+	border-bottom: 1px solid #F0EEEB;
+	padding-bottom: 4rem;
+	.prefix {
+		margin-block: 0 8px;
+		font-weight: 500;
+	}
+	.year-dropdown {
+		border: none;
+		background-color: transparent;
+		font-size: 18px;
+		color: var(--t-color);
+		width: 110px;
+		cursor: pointer;
+		outline: none;
+		option {
+			background-color: transparent;
+			font-size: 16px;
+			outline: none;
+		}
+	}
+}
+
+.grant_school_item {
+	padding-top: 4rem;
+	&:not(:last-child) {
+		border-bottom: 1px solid #F0EEEB;
+		padding-bottom: 2.4rem;
+	}
+}
+
+.grant_school_name {
+	font-size: 24px;
+	color: var(--t-color);
+	margin-block: 0 24px;
+}
+
+.individual_grant {
+	margin-bottom: 24px;
+	.grant_name {
+		color: var(--t-color);
+		font-weight: 600;
+		margin-bottom: 8px;
+	}
+	.grant_description {
+		p {
+			font-size: 16px;
+		}
+	}
+}

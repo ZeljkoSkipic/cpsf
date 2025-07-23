@@ -39,22 +39,75 @@
             "esc_html": 0
         },
         {
-            "key": "field_68650718e7878",
-            "label": "Featured Campaign",
-            "name": "featured_campaign",
+            "key": "field_687ce345e8c1f",
+            "label": "Choose Form",
+            "name": "gravity_forms",
             "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "1": "Test Campaign Name",
-                "2": "Test 2"
+                "1": "Test Form",
+                "2": "metter",
+                "3": "Donation to CPSF"
+            },
+            "default_value": false,
+            "return_format": "array",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_687ce38ce8c21",
+            "label": "Form Goal",
+            "name": "form_goal",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_687d071921c8a",
+            "label": "Goal Type",
+            "name": "goal_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "total_amount": "Total Amount",
+                "donations": "Donations"
             },
             "default_value": false,
             "return_format": "value",
@@ -68,11 +121,11 @@
             "save_options": 0
         },
         {
-            "key": "field_68697bee7325a",
-            "label": "Forms",
-            "name": "forms",
+            "key": "field_687ce37fe8c20",
+            "label": "Image",
+            "name": "image",
             "aria-label": "",
-            "type": "select",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -81,17 +134,34 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
             "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "create_options": 0,
-            "save_options": 0
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_687d1c0be820b",
+            "label": "Button Url",
+            "name": "button_url",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -112,5 +182,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751964444
+    "modified": 1753029701
 }
