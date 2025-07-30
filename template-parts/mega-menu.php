@@ -9,7 +9,6 @@
 				echo wp_get_attachment_image( $ga_archive_image, $size, "", array( "class" => "ga_archive_image" ) );
 			}
 			?>
-			<p class="mm_title">Overview</p>
 			<div class="mm_text">
 				<?php echo wp_kses_post( get_field('ga_mm_excerpt', 'option') ); ?>
 			</div>
@@ -117,7 +116,6 @@
                     echo get_the_post_thumbnail(468, 'full', array('class' => 'ga_archive_image'));
                 }
                 ?>
-                <p class="mm_title"><?php echo esc_html($contribute_page->post_title); ?></p>
                 <div class="mm_text">
                     <?php
                     // Get excerpt from ACF field or post excerpt
@@ -264,7 +262,6 @@
                     echo get_the_post_thumbnail(658, 'full', array('class' => 'ga_archive_image'));
                 }
                 ?>
-                <p class="mm_title"><?php echo esc_html($about_page->post_title); ?></p>
                 <div class="mm_text">
                     <?php
                     // Get excerpt from ACF field or post excerpt

@@ -1,28 +1,48 @@
 .st_accordion-item {
-	@include bs;
-	margin-bottom: 2rem;
-	@include br1;
+	margin-bottom: 2.4rem 4.8rem 2.4rem 2.4rem;
+	background-color: #F0EEEB;
+	border-radius: 12px;
 	.st_accordion-header {
-		font-size: var(--font-size-4);
-		color: var(--color-2);
 		cursor: pointer;
-		padding: 1rem 3rem;
+		padding: 2.4rem;
+		font-size: 18px;
+		font-family: $secondary;
 		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 0;
 		svg {
-			transition: var(--st)
+			transition: var(--st);
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 2.9rem;
+			width: 16px;
+			height: 16px;
+		}
+		.open_icon {
+			opacity: 0;
 		}
 	}
 	.st_accordion-body {
-	  padding: 1rem 3rem 2rem;
+	  padding: 0 2.4rem 2.4rem 2.4rem;
+	  p {
+		&:first-child {
+			margin-top: 0;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	  }
 	}
 	&.open {
 	  .st_accordion-header {
-		svg {
-		  transform: scaleY(-1);
+		.closed_icon {
+			opacity: 0;
+		}
+		.open_icon {
+			opacity: 1;
 		}
 	  }
 	}

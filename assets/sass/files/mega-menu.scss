@@ -40,6 +40,10 @@
 	}
 }
 
+.mm_trigger > a {
+	pointer-events: none;
+}
+
 .contribute_mega_menu {
 	.st_mega_menu_inner {
 		.mm_child_column {
@@ -82,7 +86,7 @@
 			margin-block: 24px 2px;
 		}
 		.mm_text p {
-			margin-top: 0;
+			margin-top: 24px;
 			font-size: 16px;
 			font-weight: 400;
 		}

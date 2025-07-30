@@ -169,3 +169,23 @@ label[for="nav-toggle"] {
 
     /* Nav Trigger End */
 }
+
+.nav_buttons {
+	@include limbo-max {
+		position: fixed;
+		bottom: 1rem;
+		left: 1rem;
+		width: calc(100vw - 2rem);
+		gap: 1rem;
+		@include grid-2;
+		padding-top: 0;
+		.button_1 {
+			background-color: #fff;
+		}
+		.button_1, .button_2 {
+			width: 100%;
+			margin: 0;
+			padding-block: 1rem;
+		}
+	}
+}

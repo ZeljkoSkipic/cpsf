@@ -1,6 +1,6 @@
 {
     "key": "group_6346a0e219a2b",
-    "title": "Block: Accordion",
+    "title": "BLOCK: Accordion",
     "fields": [
         {
             "key": "field_6346f73b8e4b4",
@@ -17,7 +17,8 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_6508cd0f5fcf0",
@@ -74,7 +75,8 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_6508cd1b5fcf1",
@@ -157,6 +159,24 @@
                     "media_upload": 0,
                     "toolbar": "full",
                     "parent_repeater": "field_6346a0e2d64ca"
+                },
+                {
+                    "key": "field_6888da4e1e7b1",
+                    "label": "Button",
+                    "name": "toggle_button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_6346a0e2d64ca"
                 }
             ]
         },
@@ -175,7 +195,8 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_6508cd265fcf2",
@@ -278,5 +299,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701625320
+    "modified": 1753799300
 }

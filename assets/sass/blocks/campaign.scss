@@ -1,0 +1,110 @@
+.st_campaign {
+	h1 {
+		margin-bottom: var(--space-3);
+	}
+}
+.st_campaign_inner  {
+	@include limbo-min {
+		@include flex-between;
+		.st_campaign_left {
+			width: 55%;
+		}
+		.st_campaign_right {
+			width: 40%;
+		}
+	}
+	.wp-post-image {
+		margin-bottom: var(--space-2);
+	}
+	.campaign_subtitle {
+		font-family: $secondary;
+	}
+	blockquote {
+		border-left: 4px solid #009FC3;
+		margin: 4.8rem 0 0 0;
+		padding-left: 24px;
+		font-size: 24px;
+		color: var(--t-color);
+		font-style: italic;
+		.quote_person {
+			font-size: 18px;
+			color: #5C6C73;
+			font-style: normal;
+		}
+	}
+	.campaign_sponsors {
+		margin-top: var(--space-2);
+		h2 {
+			margin-bottom: 4rem
+		}
+	}
+	.campaign_sponsors_logos {
+		@include grid-3;
+		gap: 4rem;
+		img {
+			aspect-ratio: 23 / 10;
+			object-fit: contain;
+			object-position: center;
+		}
+	}
+}
+
+.st_campaign_stats {
+	box-shadow: 0px 0px 40px 0px #29353B0A;
+	border: 2px solid #F0EEEB;
+	padding: 24px;
+	position: sticky;
+	top: 24px;
+	border-radius: 24px;
+	@include tab-max {
+		margin-top: 4rem
+	}
+	.stats_top {
+		@include grid-3;
+		border: 2px solid #F0EEEB;
+		border-radius: 12px 12px 0 0;
+		> div:not(:last-child) {
+			border-right: 2px solid #F0EEEB;
+		}
+		@include limbo-only {
+			@include col-1;
+			> div:not(:last-child) {
+				border-right: none;
+				border-bottom: 2px solid #F0EEEB;
+			}
+		}
+		@include mob-only {
+			@include col-1;
+			> div:not(:last-child) {
+				border-right: none;
+				border-bottom: 2px solid #F0EEEB;
+			}
+		}
+
+		> div {
+			text-align: center;
+			padding: 2rem;
+			@include flex-center;
+			flex-direction: column;
+		}
+	}
+	.bar {
+		padding: 24px;
+		border-radius: 0 0 12px 12px;
+		border: 2px solid #F0EEEB;
+		border-top: none;
+	}
+	.badge {
+		text-align: center;
+		font-size: 16px;
+		color: var(--t-color);
+		@include flex-center;
+		svg {
+			margin-right: 15px;
+		}
+	}
+}
+.campaign_btn {
+	margin-block: 24px;
+	width: 100%;
+}

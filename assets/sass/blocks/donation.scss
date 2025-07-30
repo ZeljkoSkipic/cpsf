@@ -1,3 +1,31 @@
+.st_donation_intro {
+	@include tab-min {
+		@include flex-between;
+		.left {
+			&:only-child {
+				width: 100%;
+			}
+			&:not(:only-child) {
+				width: calc(50% - 2rem);
+				.st_intro {
+					text-align: left;
+				}
+			}
+		}
+		.right {
+			width: calc(50% - 2rem);
+		}
+	}
+	gap: 4rem;
+	padding-bottom: var(--space-4);
+	max-width: 1080px;
+	margin-inline: auto;
+	align-items: center;
+
+	img {
+		border-radius: 12px;
+	}
+}
 .st_donation_form {
 	max-width: 700px;
 	margin-inline: auto;
@@ -10,9 +38,10 @@
 		}
 		.gform_description {
 			color: #000;
-			margin-bottom: var(--space-2);
+			margin-bottom: 0;
 		}
 		.gform_required_legend {
+			margin-top: var(--space-4);
 			font-style: italic;
 		}
 	}

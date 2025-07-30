@@ -7,22 +7,11 @@
 	.home_hero_text {
 		margin-block: 2.4rem 3.2rem;
 	}
-	.checkmarks {
-		@include flex-between;
-		@include clean-list;
-		li {
-			display: flex;
-			svg {
-				width: 24p;
-				margin-right: 14px;
-				flex-shrink: 0;
-			}
-		}
-	}
 	.home_hero_video {
 		overflow: hidden;
 		border-radius: 12px;
 		position: relative;
+		margin-top: var(--space-3);
 	}
 	.play-overlay {
 		position: absolute;

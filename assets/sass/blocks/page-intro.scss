@@ -1,0 +1,12 @@
+.st_page_intro_inner {
+	border-bottom: 1px solid #F0EEEB;
+	@include tab-min {
+		@include flex-between;
+		.left {
+			width: 46%;
+		}
+		.right {
+			width: 49%;
+		}
+	}
+}

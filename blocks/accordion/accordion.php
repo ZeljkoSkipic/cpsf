@@ -40,10 +40,21 @@ if ( ! empty( $padding) ) {
 			?>
 			<div class="st_accordion-item <?php echo $open ?>">
 				<h3 class="st_accordion-header">
-					<?php echo $accordion_title; ?><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+					<?php echo $accordion_title; ?>
+					<svg class="closed_icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1.5V16.5M16.5 9H1.5" stroke="#29353B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					<svg class="open_icon" width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1H15" stroke="#29353B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 				</h3>
 				<div class="st_accordion-body" style="<?php echo $display ?>">
 					<?php echo $accordion_content; ?>
+					<?php
+					$toggle_button = get_sub_field('toggle_button');
+					if( $toggle_button ):
+						$tb_url = $toggle_button['url'];
+						$tb_title = $toggle_button['title'];
+						$tb_target = $toggle_button['target'] ? $toggle_button['target'] : '_self';
+						?>
+						<a class="toggle_button" href="<?php echo esc_url( $tb_url ); ?>" target="<?php echo esc_attr( $tb_target ); ?>"><?php echo esc_html( $tb_title ); ?></a>
+					<?php endif; ?>
 				</div>
 			</div>
 

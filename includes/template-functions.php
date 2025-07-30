@@ -182,7 +182,7 @@ function GetGravityFormMetas($formID)
 	}
 
 	return null;
-	
+
 }
 
 function acf_populate_gravity_forms($field)
@@ -216,12 +216,18 @@ function register_acf_blocks()
 	register_block_type(__DIR__ . '/../blocks/featured-campaign-cta');
 	register_block_type(__DIR__ . '/../blocks/instagram');
 	register_block_type(__DIR__ . '/../blocks/cta');
+	register_block_type(__DIR__ . '/../blocks/inner-hero');
 	register_block_type(__DIR__ . '/../blocks/inner-hero-alt');
 	register_block_type(__DIR__ . '/../blocks/advanced-section');
 	register_block_type(__DIR__ . '/../blocks/ways-to-give');
 	register_block_type(__DIR__ . '/../blocks/logos');
 	register_block_type(__DIR__ . '/../blocks/donation');
 	register_block_type(__DIR__ . '/../blocks/featured-campaign');
+	register_block_type(__DIR__ . '/../blocks/campaign');
+	register_block_type(__DIR__ . '/../blocks/page-intro');
+	register_block_type(__DIR__ . '/../blocks/short-banner');
+	register_block_type(__DIR__ . '/../blocks/team');
+	register_block_type(__DIR__ . '/../blocks/partner-with-us');
 
 	register_block_type(__DIR__ . '/../blocks/gas/grant-hero');
 	register_block_type(__DIR__ . '/../blocks/gas/grant-anchors');

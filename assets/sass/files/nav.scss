@@ -15,6 +15,9 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		@include mob-only {
+			flex-direction: column;
+		}
 	}
 	p {
 		margin: 0;
@@ -154,7 +157,7 @@
 					}
 				}
 				> a {
-					font-size: 18px;
+					font-size: 1.8rem;
 					font-weight: 600;
 				}
 				a {
@@ -196,6 +199,8 @@
 	margin-left: auto;
 	a {
 		@include btn;
+		font-size: 1.8rem;
+		min-width: 15rem;
 	}
 	.button_1 {
 		color: var(--color-2);

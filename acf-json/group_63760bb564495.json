@@ -367,7 +367,9 @@
                 "style-1": "Transparent BG \/w IMG",
                 "style-2": "White BG \/w Icon",
                 "style-3": "Get Started",
-                "style-4": "Counters"
+                "style-4": "Counters",
+                "style-5": "Small left Icons",
+                "style-6": "Steps Arrows"
             },
             "default_value": "style-1",
             "return_format": "value",
@@ -399,5 +401,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751287502
+    "modified": 1753790103
 }

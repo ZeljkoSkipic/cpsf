@@ -1,0 +1,58 @@
+.st_short_banner_inner {
+	@include flex;
+	padding-inline: 24px;
+	border: 2px solid #29353B1A;
+	border-radius: 12px;
+	.short_banner_preview {
+		display: flex;
+		justify-content: flex-end;
+		img {
+			object-position: bottom;
+			object-fit: contain;
+		}
+	}
+	.short_banner_content {
+		padding-block: 4rem;
+		p {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.short_banner_file {
+
+		display: flex;
+		align-items: center;
+		a {
+			@include flex-center;
+			color: #007F9B;
+			svg {
+				margin-right: 8px;
+			}
+		}
+	}
+	@include limbo-min {
+		.short_banner_preview {
+			width: 25%;
+		}
+		.short_banner_content {
+			width: 42%;
+			margin-left: 4rem;
+		}
+		.short_banner_file {
+			margin-inline: auto 5.6rem;
+			text-align: right;
+			justify-content: flex-end;
+			width: calc(33% - 10.6rem);
+		}
+	}
+	@include tab-max {
+		flex-direction: column;
+		.short_banner_preview {
+			order: 3;
+			img {
+				object-position: right;
+			}
+		}
+	}
+}

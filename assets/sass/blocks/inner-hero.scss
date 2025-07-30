@@ -1,3 +1,29 @@
+.st_inner_hero_inner {
+	@include flex-between;
+	align-items: center;
+	@include limbo-min {
+		.left {
+			width: 45%;
+		}
+		.right {
+			width: 49%;
+		}
+	}
+	.left {
+		.st_intro {
+			text-align: left;
+		}
+		.intro_title  {
+			font-size: var(--font-size-1);
+		}
+		@include tab-max {
+			margin-bottom: 4rem;
+		}
+	}
+	.intro_text {
+		font-size: 20px;
+	}
+}
 .st_inner_hero_2 {
 	img {
 		border-radius: 12px;

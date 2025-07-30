@@ -1,0 +1,56 @@
+.st_pwu_inner {
+
+	background-color: #fff;
+	border-radius: 12px;
+	overflow: hidden;
+	@include limbo-min {
+		@include grid-2;
+		gap: 4rem;
+		.left {
+			padding: var(--space-3) 0 var(--space-3) var(--space-2);
+		}
+	}
+	@include tab-max {
+		.left {
+			padding: 4rem;
+		}
+	}
+
+	.right {
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+	}
+
+}
+
+.pwu_buttons {
+	display: flex;
+	margin-top: var(--space-4);
+	.download_btn {
+		@include tab-min {
+			&:not(:only-child) {
+				margin-left: 3.2rem;
+			}
+		}
+	}
+	@include mob-only {
+		flex-direction: column;
+		.download_btn {
+			justify-content: center;
+			&:not(:only-child) {
+				margin-top: 3.2rem;
+			}
+		}
+	}
+}
+
+.download_btn {
+	color: #007F9B;
+	display: flex;
+	align-items: center;
+	svg {
+		margin-right: 8px;
+	}
+
+}

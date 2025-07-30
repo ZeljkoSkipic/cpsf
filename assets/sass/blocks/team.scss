@@ -1,0 +1,37 @@
+.team_section {
+	&:not(:last-child) {
+		margin-bottom: var(--space-3);
+	}
+}
+.team_section_title {
+	font-family: $secondary;
+}
+.team_section_inner {
+	@include grid-5;
+	gap: 24px;
+	@include limbo-only {
+		@include col-3;
+	}
+	@include tab-only {
+		@include col-2;
+	}
+	@include mob-only {
+		@include col-1;
+	}
+	.team_member {
+		background-color: #fff;
+		padding: 12px;
+		border-radius: 20px;
+		img {
+			border-radius: 12px;
+		}
+		.member_name {
+			margin-block: 12px 2px;
+			color: var(--t-color);
+			font-weight: 600;
+		}
+		.member_position {
+			margin-block: 0;
+		}
+	}
+}

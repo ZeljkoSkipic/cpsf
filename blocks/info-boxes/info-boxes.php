@@ -60,15 +60,10 @@ if ( ! empty( $style ) ) {
 						<?php echo wp_get_attachment_image( $ib_image, $size, "", array( "class" => "ib_image" ) ); ?>
 					</figure>
 
-					<?php } else { ?>
-						<figure class="ib_icon">
-							<?php echo $icon; ?>
-						</figure>
-					<?php }
-					if( $icon ) {
-
-					} ?>
-                   <h3 class="st_col_title title-3"><?php echo $title; ?></h3>
+					<?php } ?>
+					<?php if($title) { ?>
+						<h3 class="st_col_title title-3"><?php echo $title; ?></h3>
+					<?php } ?>
                     <div class="st_col_text">
                         <?php echo $text; ?>
                     </div>
