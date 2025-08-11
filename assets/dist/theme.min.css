@@ -274,6 +274,18 @@ input.gform_previous_button{background-color:transparent}
 .single-grant-winner .grant_name{font-size:24px;font-family:Libre Franklin,sans-serif}
 .single-grant-winner .grant_value{color:var(--t-color);font-weight:600}
 #view-all-winners-btn{margin-top:4rem}
+.wp-block-separator.is-style-wide{margin-block:4rem;border-color:#f0eeeb}
+.single-post .post_main header{text-align:center}
+.single-post .post_main header h1{max-width:920px;margin-inline:auto;font-size:7.2rem}
+.single-post .post_main header time{margin-bottom:var(--space-2);display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}
+.single-post .post_main img{border-radius:12px}
+.single-post .post_main h2,.single-post .post_main h3,.single-post .post_main h4{margin-block:4rem 1.6rem}
+.single-post .post_main .wp-element-caption{font-size:16px;color:#819193;font-weight:400e}
+.single-post .post_main .wp-block-pullquote{padding-block:4rem}
+.single-post .post_main blockquote{border-left:4px solid #009fc3;padding:8px 0 8px 20px}
+.single-post .post_main blockquote p{color:var(--t-color);font-size:24px;font-style:italic}
+.single-post .post_main blockquote cite{font-style:normal;font-size:18px}
+.single-post .post_main blockquote cite::before{content:"— "}
 .st_home_hero{text-align:center}
 .st_home_hero h1{max-width:77rem;margin-inline:auto}
 .st_home_hero .home_hero_text{margin-block:2.4rem 3.2rem}

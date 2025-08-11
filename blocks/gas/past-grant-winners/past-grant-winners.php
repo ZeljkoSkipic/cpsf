@@ -48,20 +48,23 @@ if ( ! empty( $block['className'] ) ) {
 				<div class="right">
 					<p class="prefix">Year</p>
 					<select id="year-selector" class="year-dropdown">
-						<?php
-						// Reset the query to get all years for dropdown
-						$grant_winner_query->rewind_posts();
-						$first_year = true;
-						while ($grant_winner_query->have_posts()) : $grant_winner_query->the_post();
-							$full_title = get_the_title();
-							// Extract year and dashes only (e.g., "2024-25" from "2024-25 Imagine Grants")
-							preg_match('/(\d{4}(?:-\d{2,4})?)/', $full_title, $matches);
-							$year = isset($matches[1]) ? $matches[1] : $full_title; // Fallback to full title if no match
-							?>
-							<option value="year-<?php echo esc_attr($full_title); ?>" <?php echo $first_year ? 'selected' : ''; ?>><?php echo esc_html($year); ?></option>
-							<?php $first_year = false; ?>
-						<?php endwhile; ?>
-					</select>
+					<?php
+					// Reset the query to get all years for dropdown
+					$grant_winner_query->rewind_posts();
+					$first_year = true;
+					while ($grant_winner_query->have_posts()) : $grant_winner_query->the_post();
+						$full_title = get_the_title();
+						// Extract year and dashes only (e.g., "2024-25" from "2024-25 Imagine Grants")
+						preg_match('/(\d{4}(?:-\d{2,4})?)/', $full_title, $matches);
+						$year = isset($matches[1]) ? $matches[1] : $full_title; // Fallback to full title if no match
+						?>
+						<option value="year-<?php echo esc_attr($full_title); ?>" <?php echo $first_year ? 'selected' : ''; ?>><?php echo esc_html($year); ?></option>
+						<?php $first_year = false; ?>
+					<?php endwhile; ?>
+
+					<!-- Add "View All Winners" as the last option -->
+					<option value="view-all-winners">See More</option>
+				</select>
 				</div>
 			</div>
 
@@ -151,8 +154,6 @@ if ( ! empty( $block['className'] ) ) {
 					<?php endif; ?>
 
                 <?php endwhile; ?>
-				<a href="" id="view-all-winners-btn" class="btn-2">View All Winners</a>
-
                 </div>
 
 
@@ -163,67 +164,65 @@ if ( ! empty( $block['className'] ) ) {
 	</div>
 
 	<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const yearSelector = document.getElementById('year-selector');
-		const grantWrappers = document.querySelectorAll('.grant_schools_wrapper');
-		const totalAllocationDisplay = document.getElementById('total-allocation-display');
-		const totalGrantsDisplay = document.getElementById('total-grants-display');
-		const viewAllWinnersBtn = document.getElementById('view-all-winners-btn');
+document.addEventListener('DOMContentLoaded', function() {
+    const yearSelector = document.getElementById('year-selector');
+    const grantWrappers = document.querySelectorAll('.grant_schools_wrapper');
+    const totalAllocationDisplay = document.getElementById('total-allocation-display');
+    const totalGrantsDisplay = document.getElementById('total-grants-display');
 
-		// Store post permalinks for each year
-		const yearPermalinks = {};
+    // Store post permalinks for each year
+    const yearPermalinks = {};
 
-		<?php
-		// Generate JavaScript object with year permalinks
-		$grant_winner_query->rewind_posts();
-		while ($grant_winner_query->have_posts()) : $grant_winner_query->the_post(); ?>
-			yearPermalinks['year-<?php echo esc_js(get_the_title()); ?>'] = '<?php echo esc_js(get_permalink()); ?>';
-		<?php endwhile; ?>
+    <?php
+    // Generate JavaScript object with year permalinks
+    $grant_winner_query->rewind_posts();
+    while ($grant_winner_query->have_posts()) : $grant_winner_query->the_post(); ?>
+        yearPermalinks['year-<?php echo esc_js(get_the_title()); ?>'] = '<?php echo esc_js(get_permalink()); ?>';
+    <?php endwhile; ?>
 
-		// Initially hide all grant sections
-		grantWrappers.forEach(wrapper => {
-			wrapper.style.display = 'none';
-		});
+    // Initially hide all grant sections
+    grantWrappers.forEach(wrapper => {
+        wrapper.style.display = 'none';
+    });
 
-		// Show first year by default and update total allocation, grant count, and button link
-		if (grantWrappers.length > 0) {
-			grantWrappers[0].style.display = 'block';
-			yearSelector.value = grantWrappers[0].id;
-			const firstYearTotal = grantWrappers[0].getAttribute('data-total-allocation');
-			const firstYearGrantCount = grantWrappers[0].getAttribute('data-grant-count');
-			totalAllocationDisplay.innerHTML = '<strong>$' + firstYearTotal + '</strong>';
-			totalGrantsDisplay.innerHTML = '<span>for <strong>' + firstYearGrantCount + '</strong> grants</span>';
+    // Show first year by default and update total allocation and grant count
+    if (grantWrappers.length > 0) {
+        grantWrappers[0].style.display = 'block';
+        yearSelector.value = grantWrappers[0].id;
+        const firstYearTotal = grantWrappers[0].getAttribute('data-total-allocation');
+        const firstYearGrantCount = grantWrappers[0].getAttribute('data-grant-count');
+        totalAllocationDisplay.innerHTML = '<strong>$' + firstYearTotal + '</strong>';
+        totalGrantsDisplay.innerHTML = '<span>for <strong>' + firstYearGrantCount + '</strong> grants</span>';
+    }
 
-			// Set initial button link
-			const firstYearId = grantWrappers[0].id;
-			if (yearPermalinks[firstYearId]) {
-				viewAllWinnersBtn.href = yearPermalinks[firstYearId];
-			}
-		}
+    yearSelector.addEventListener('change', function() {
+        const selectedValue = this.value;
 
-		yearSelector.addEventListener('change', function() {
-			const selectedYear = this.value;
+        // Check if "View All Winners" is selected
+        if (selectedValue === 'view-all-winners') {
+            // Redirect to the first year's permalink (or you can specify a different URL)
+            const firstYearKey = Object.keys(yearPermalinks)[0];
+            if (yearPermalinks[firstYearKey]) {
+                window.location.href = yearPermalinks[firstYearKey];
+            }
+            return;
+        }
 
-			// Hide all grant sections
-			grantWrappers.forEach(wrapper => {
-				wrapper.style.display = 'none';
-			});
+        // Hide all grant sections
+        grantWrappers.forEach(wrapper => {
+            wrapper.style.display = 'none';
+        });
 
-			// Show selected year section and update total allocation, grant count, and button link
-			const selectedWrapper = document.getElementById(selectedYear);
-			if (selectedWrapper) {
-				selectedWrapper.style.display = 'block';
-				const yearTotal = selectedWrapper.getAttribute('data-total-allocation');
-				const yearGrantCount = selectedWrapper.getAttribute('data-grant-count');
-				totalAllocationDisplay.innerHTML = '<strong>$' + yearTotal + '</strong>';
-				totalGrantsDisplay.innerHTML = '<span>for <strong>' + yearGrantCount + '</strong> grants</span>';
-
-				// Update button link
-				if (yearPermalinks[selectedYear]) {
-					viewAllWinnersBtn.href = yearPermalinks[selectedYear];
-				}
-			}
-		});
-	});
-	</script>
+        // Show selected year section and update total allocation and grant count
+        const selectedWrapper = document.getElementById(selectedValue);
+        if (selectedWrapper) {
+            selectedWrapper.style.display = 'block';
+            const yearTotal = selectedWrapper.getAttribute('data-total-allocation');
+            const yearGrantCount = selectedWrapper.getAttribute('data-grant-count');
+            totalAllocationDisplay.innerHTML = '<strong>$' + yearTotal + '</strong>';
+            totalGrantsDisplay.innerHTML = '<span>for <strong>' + yearGrantCount + '</strong> grants</span>';
+        }
+    });
+});
+</script>
 </section>

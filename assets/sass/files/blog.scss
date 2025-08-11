@@ -1,0 +1,51 @@
+.wp-block-separator.is-style-wide {
+	margin-block: 4rem;
+	border-color: #F0EEEB;
+}
+
+.single-post {
+	.post_main {
+		header {
+			text-align: center;
+			h1 {
+				max-width: 920px;
+				margin-inline: auto;
+				font-size: 7.2rem;
+			}
+			time {
+				margin-bottom: var(--space-2);
+				display: inline-flex;
+			}
+		}
+		img {
+			border-radius: 12px;
+		}
+		h2, h3, h4 {
+			margin-block: 4rem 1.6rem;
+		}
+		.wp-element-caption {
+			font-size: 16px;
+			color: #819193;
+			font-weight: 400e;
+		}
+		.wp-block-pullquote {
+			padding-block: 4rem;
+		}
+		blockquote {
+			p {
+				color: var(--t-color);
+				font-size: 24px;
+				font-style: italic;
+			}
+			cite {
+				&::before {
+					content: "— "
+				}
+				font-style: normal;
+				font-size: 18px;
+			}
+			border-left: 4px solid #009FC3;
+			padding: 8px 0 8px 20px;
+		}
+	}
+}

@@ -57,6 +57,44 @@
             "return_format": "array"
         },
         {
+            "key": "field_6899f4bd33ca7",
+            "label": "Background Color",
+            "name": "top_bar_background_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#29353b",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6899f4e233ca8",
+            "label": "Text & Link Color",
+            "name": "top_bar_text_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fff",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_6880f305a0cdc",
             "label": "Main Menu Button 1",
             "name": "button_1",
@@ -357,5 +395,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753952852
+    "modified": 1754920230
 }
