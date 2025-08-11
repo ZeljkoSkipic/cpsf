@@ -43,4 +43,27 @@ jQuery(document).ready(function ($) {
 		$('body').removeClass('about_mega_menu-open');
 	});
 
+	   // Nav buttons scroll behavior for mobile
+    $(window).scroll(function() {
+        var scrollTop = $(this).scrollTop();
+        var windowWidth = $(window).width();
+
+        if (windowWidth < 843) {
+            if (scrollTop > 200) {
+                $('.nav_buttons').css('bottom', '1rem');
+            } else {
+                $('.nav_buttons').css('bottom', ''); // Remove the bottom property to reset
+            }
+        }
+    });
+
+    // Handle window resize to reset nav_buttons if needed
+    $(window).resize(function() {
+        var windowWidth = $(window).width();
+
+        if (windowWidth >= 843) {
+            $('.nav_buttons').css('bottom', ''); // Reset bottom property on larger screens
+        }
+    });
+
 });

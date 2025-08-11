@@ -1,6 +1,9 @@
 <?php
 
 $padding = get_field_object('padding');
+$bottom_border = get_field('remove_bottom_border');
+
+
 
 $class = 'st_block st_page_intro space_4';
 if ( ! empty( $block['className'] ) ) {
@@ -17,7 +20,15 @@ if ( ! empty( $padding) ) {
     $class .=  ' ' . $padding['value'];
 }
 
- ?>
+if ( $bottom_border ) {
+    $class .=  ' ' . 'no_border';
+}
+
+
+
+
+
+?>
 <section <?php echo $anchor; ?> class="<?php echo $class ?>">
 <?php get_template_part('components/background'); ?>
 	<div class="st_page_intro_inner container">

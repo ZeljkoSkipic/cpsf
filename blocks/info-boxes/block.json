@@ -11,7 +11,8 @@
 	},
 	"supports": {
 		"mode": false,
-		"align": false
+		"align": false,
+		"anchor": true
 	},
     "align": "full"
 }

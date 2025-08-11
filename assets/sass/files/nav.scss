@@ -1,5 +1,8 @@
 .sub-menu {
 	@include clean-list;
+	@include limbo-min {
+		display: none!important;
+	}
 }
 .sub-menu-trigger {
 	svg {

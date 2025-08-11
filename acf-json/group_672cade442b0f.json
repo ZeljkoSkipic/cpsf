@@ -99,9 +99,9 @@
         {
             "key": "field_672cae2b24a55",
             "label": "Contact Form",
-            "name": "contact_form",
+            "name": "gravity_forms",
             "aria-label": "",
-            "type": "post_object",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -110,18 +110,43 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "wpforms"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "object",
+            "choices": {
+                "1": "Contact Form",
+                "2": "IMAGINE Grant Application",
+                "3": "GANP Ticket Orders",
+                "5": "Golden Apple Nomination",
+                "6": "Summer Program Grant Application",
+                "7": "Special Project Grant Application",
+                "8": "Hands Across Corvallis",
+                "9": "YEA! Grant Application",
+                "10": "Board of Trustees Application",
+                "11": "Tapas and Treasures",
+                "12": "Hands Across Corvallis Sponsorship",
+                "13": "2026 Scholarship Form",
+                "14": "Summer Programs Tour RSVP",
+                "15": "YEA! Grant Final Report",
+                "16": "IMAGINE Grant Final Report",
+                "17": "Summer Programs Final Report",
+                "18": "Special Project Grant Final Report",
+                "19": "Non- Competitive Funding Request",
+                "20": "Donor Celebration RSVP",
+                "21": "Summer Programs Sponsorship",
+                "22": "Donation to GANP",
+                "23": "Fiscal Sponsorship Application",
+                "24": "Test Zeljko",
+                "25": "Donation to CPSF",
+                "26": "Green Apple Nomination"
+            },
+            "default_value": false,
+            "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
             "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_672cade459c64",
@@ -222,5 +247,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730981527
+    "modified": 1753973463
 }

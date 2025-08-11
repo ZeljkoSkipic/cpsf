@@ -6,6 +6,9 @@
 	pointer-events: none;
 	@include st;
 	padding-top: 50px;
+	@include tab-max {
+		display: none;
+	}
 }
 .grants_mega_menu-open, .contribute_mega_menu-open, .stories_mega_menu-open, .about_mega_menu-open {
 	.st_mega_menu {

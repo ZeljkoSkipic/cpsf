@@ -79,6 +79,27 @@
             "media_upload": 0,
             "toolbar": "full",
             "delay": 0
+        },
+        {
+            "key": "field_688b21d689b65",
+            "label": "Remove Bottom Border",
+            "name": "remove_bottom_border",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -99,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753797745
+    "modified": 1753948659
 }

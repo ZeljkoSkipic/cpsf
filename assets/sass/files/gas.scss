@@ -170,7 +170,9 @@
 // GAS Section - Global
 
 .st_gas_section {
-	border-bottom: 2px solid #F0EEEB;
+	&:not(:last-child) {
+		border-bottom: 2px solid #F0EEEB;
+	}
 }
 
 .st_gas_section_inner {

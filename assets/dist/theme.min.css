@@ -146,11 +146,14 @@ a{color:var(--link-color)}
 .gfield_checkbox input{display:none}
 .gfield_checkbox label{background-image:url(../icons/square.svg);background-repeat:no-repeat;background-position:center left;padding-left:26px;background-size:18px;font-size:16px;color:#000;font-weight:400;cursor:pointer}
 .gfield_checkbox input:checked+label{background-image:url(../icons/check-square.svg)}
+fieldset:not(.donation_type):not(.donation_frequency):not(.donation_radio_buttons) .ginput_container_radio input{display:none}
+fieldset:not(.donation_type):not(.donation_frequency):not(.donation_radio_buttons) .ginput_container_radio label{background-image:url(../icons/donate-circle.svg);background-repeat:no-repeat;background-position:center left;padding-left:26px;background-size:18px;font-size:16px;color:#000;font-weight:400;cursor:pointer}
+fieldset:not(.donation_type):not(.donation_frequency):not(.donation_radio_buttons) .ginput_container_radio input:checked+label{background-image:url(../icons/check-circle.svg)}
 .gfield--input-type-html{font-size:16px;margin-top:-16px}
 fieldset{padding:0;border:0}
 fieldset.gfield--type-radio input{display:none}
 fieldset.gfield--type-radio .gchoice{all:unset}
-fieldset.gfield--type-radio input:checked+label:after{background-image:url(../icons/donate-check-circle.svg)}
+fieldset.gfield--type-radio input:checked+label:after{background-image:url(../icons/check-circle.svg)}
 fieldset.gfield--type-radio label{cursor:pointer;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;border:1px solid #000;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-left:0;padding:12px}
 fieldset.gfield--type-radio label:before{width:24px;height:24px;-ms-flex-negative:0;flex-shrink:0;margin-right:6px}
 fieldset.gfield--type-radio label:after{content:"";display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;background-image:url(../icons/donate-circle.svg);width:18px;height:18px;background-repeat:no-repeat;background-size:contain;margin-left:6px;-ms-flex-negative:0;flex-shrink:0}
@@ -165,7 +168,7 @@ input.gform_previous_button{background-color:transparent}
 .gfield_required_asterisk{color:red}
 .gform_ajax_spinner{height:64px;max-width:100%;width:128px;margin:auto;-o-object-fit:contain;object-fit:contain}
 .gform_validation_container{display:none !important;left:-9000px;position:absolute !important}
-.gfield--type-total,.gfield_visibility_hidden,.hidden_label legend.gform-field-label{display:none !important}
+.gfield--type-total,.gfield_visibility_hidden,.hidden_label legend.gform-field-label,.hidden_label .gfield_label{display:none !important}
 .gform_fields{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:21px 16px}
 .gform_fields .gfield{grid-column:1 / 13}
 .block_bg{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%;z-index:-1}
@@ -222,7 +225,7 @@ input.gform_previous_button{background-color:transparent}
 .st_gas_anchors_inner a.past{background-image:url(../icons/gas.svg)}
 .st_gas_anchors_inner a.nominate{background-image:url(../icons/nominate.svg)}
 .st_gas_anchors_inner a.winners{background-image:url(../icons/award.svg)}
-.st_gas_section{border-bottom:2px solid #f0eeeb}
+.st_gas_section:not(:last-child){border-bottom:2px solid #f0eeeb}
 .st_gas_section_inner .gas_section_right p:first-child{margin-top:0}
 .st_gas_section_inner .gr_button{margin-top:var(--space-4)}
 .gas_resource{background-color:#f0eeeb;padding:24px;border-radius:12px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:var(--space-4)}
@@ -259,6 +262,18 @@ input.gform_previous_button{background-color:transparent}
 .st_mega_menu_inner .mm_col:not(.mm_overview) .mm_grant_item:hover .mm_item_title svg{opacity:1;margin-left:15px}
 .st_mega_menu_inner input{font-size:16px;background-color:#eff0f0;border-radius:12px;border:0;margin-bottom:12px;padding:12px 24px;font-size:16px;font-weight:400;min-height:48px}
 .st_mega_menu_inner .mm_button{width:100%;padding-block:8px}
+.single-grant-winner h1{text-align:center;grid-column:1 / 3}
+.single-grant-winner .single_grant_top{background-color:#f0eeeb;border-radius:12px;padding:24px;margin-top:var(--space-4)}
+.single-grant-winner .single_grant_top .prefix{margin-block:08px}
+.single-grant-winner .total_allocations_inner{font-weight:600;color:var(--t-color);font-size:24px}
+.single-grant-winner .grant_winner_selector{width:100%;margin-top:4rem}
+.single-grant-winner .grant_winner_selector select{background-color:transparent;border:0;padding-right:40px;font-size:24px;cursor:pointer;outline:0}
+.single-grant-winner .grant_winner_selector select option{font-size:22px}
+.single-grant-winner .individual_grant{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.single-grant-winner .individual_grant .grant_description{width:100%}
+.single-grant-winner .grant_name{font-size:24px;font-family:Libre Franklin,sans-serif}
+.single-grant-winner .grant_value{color:var(--t-color);font-weight:600}
+#view-all-winners-btn{margin-top:4rem}
 .st_home_hero{text-align:center}
 .st_home_hero h1{max-width:77rem;margin-inline:auto}
 .st_home_hero .home_hero_text{margin-block:2.4rem 3.2rem}
@@ -288,7 +303,7 @@ input.gform_previous_button{background-color:transparent}
 .st_info_boxes.style-6.cols-3 .st_col:first-child::before{content:"";width:100%;max-width:380px;height:6rem;background-image:url(../icons/curved-arrow-top.svg);background-position:center right;background-repeat:no-repeat;background-size:contain;position:absolute;top:0}
 .st_info_boxes.style-6.cols-3 .st_col:nth-child(2)::after{content:"";width:100%;height:6rem;background-image:url(../icons/curved-arrow-bottom.svg);background-position:center right;background-repeat:no-repeat;background-size:contain;position:absolute;bottom:0}
 .st_info_boxes.style-6 .st_col_text{max-width:380px}
-.button_after_boxes{margin-top:var(--space-3);margin-left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}
+.button_after_boxes{margin-top:var(--space-3)}
 .st_testimonial_content{padding:var(--space-2);border-radius:12px;position:relative;text-align:center}
 .st_testimonial_content .testimonial_content{font-size:var(--font-size-3);color:#29353b;font-style:italic;font-weight:700;line-height:1.4;margin-bottom:var(--space-4)}
 .st_testimonial_content .open_quote,.st_testimonial_content .close_quote{position:absolute;width:8rem;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content}
@@ -382,20 +397,27 @@ input.gform_previous_button{background-color:transparent}
 .st_donation_form .gf_page_steps .gf_step_completed .gf_step_number:after{content:"";position:absolute;background-image:url(../icons/check-white.svg);background-repeat:no-repeat;background-position:center;background-size:15px;width:100%;height:100%;background-color:var(--color-2);border-color:var(--color-2);border-radius:40px}
 .st_donation_form .gform_page_fields{background-color:#fff;border:2px solid #ccc;border-radius:12px;padding:24px 32px}
 .st_donation_form .gform_page_fields .gform_fields{row-gap:24px}
+.st_donation_form .donation_radio_buttons .gfield_radio{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.st_donation_form .donation_radio_buttons .gfield_radio input{display:none}
+.st_donation_form .donation_radio_buttons .gfield_radio .gchoice label{border:1px solid;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;color:var(--t-color);font-size:16px;font-weight:400;padding:12px;-webkit-box-sizing:border-box;box-sizing:border-box;cursor:pointer}
+.st_donation_form .donation_radio_buttons .gfield_radio .gchoice input:checked+label{background-color:#000;color:#fff}
 .st_donation_form fieldset.donation_frequency .gfield_radio{grid-template-columns:repeat(2,minmax(0,1fr))}
 .st_donation_form fieldset.donation_frequency label{padding:24px;font-size:15px;font-weight:700}
+.st_donation_form fieldset.donation_type .gfield_radio .gchoice:first-child label:before{content:url(../icons/donate-individual.svg)}
+.st_donation_form fieldset.donation_type .gfield_radio .gchoice:nth-child(2) label:before{content:url(../icons/donate-household.svg)}
+.st_donation_form fieldset.donation_type .gfield_radio .gchoice:nth-child(3) label:before{content:url(../icons/donate-business.svg)}
 .st_donation_form fieldset.donation_type .gfield_radio label{padding:24px 20px;word-break:break-all;font-size:13px;color:#000}
-.st_donation_form fieldset.donation_type .gfield_radio label#label_4_27_0:before{content:url(../icons/donate-individual.svg)}
-.st_donation_form fieldset.donation_type .gfield_radio label#label_4_27_1:before{content:url(../icons/donate-household.svg)}
-.st_donation_form fieldset.donation_type .gfield_radio label#label_4_27_2:before{content:url(../icons/donate-business.svg)}
 .st_donation_form .gfield_html{color:#000}
 .st_donation_form .gform_page_footer{display:grid;grid-template-columns:1fr 1fr 1fr}
 .st_donation_form input.gform_next_button,.st_donation_form input[type='submit']{margin-left:auto;-webkit-box-ordinal-group:7;-ms-flex-order:6;order:6;grid-column:3 / 4}
 .st_donation_form input.gform_previous_button{margin-right:auto}
 .st_donation_form .gform_confirmation_message{background-color:#fff;border:2px solid #ccc;border-radius:12px;padding:24px 32px;text-align:center;font-size:3.2rem;color:#000}
 .past_winners_head{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-wrap:wrap;flex-wrap:wrap;border-bottom:1px solid #f0eeeb;padding-bottom:4rem}
-.past_winners_head .prefix{margin-block:0 8px;font-weight:500}
-.past_winners_head .year-dropdown{border:0;background-color:transparent;font-size:18px;color:var(--t-color);width:110px;cursor:pointer;outline:0}
+.past_winners_head .left{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.past_winners_head .left #total-allocation-display,.past_winners_head .left #total-grants-display{color:var(--t-color);font-weight:600}
+.past_winners_head .left #total-allocation-display{margin-right:4px}
+.past_winners_head .prefix{margin-block:0 8px;font-weight:500;width:100%}
+.past_winners_head .year-dropdown{border:0;background-color:transparent;font-size:18px;color:var(--t-color);width:110px;cursor:pointer;outline:0;font-weight:600}
 .past_winners_head .year-dropdown option{background-color:transparent;font-size:16px;outline:0}
 .grant_school_item{padding-top:4rem}
 .grant_school_item:not(:last-child){border-bottom:1px solid #f0eeeb;padding-bottom:2.4rem}
@@ -403,6 +425,15 @@ input.gform_previous_button{background-color:transparent}
 .individual_grant{margin-bottom:24px}
 .individual_grant .grant_name{color:var(--t-color);font-weight:600;margin-bottom:8px}
 .individual_grant .grant_description p{font-size:16px}
+.paw_winners_year:not(:first-child),.paw_simple:not(:first-child){padding-top:4rem;border-top:1px solid #f0eeeb}
+.paw_winners_year:not(:last-child),.paw_simple:not(:last-child){padding-bottom:4rem}
+.paw_video iframe{width:100%;height:auto;aspect-ratio:16 / 9;border-radius:12px}
+.paw_year{font-size:24px;font-family:Libre Franklin,sans-serif}
+.paw_grid,.paw_simple{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.paw_grid .paw_winner{background-color:#fff;border:2px solid #f0eeeb;-webkit-box-shadow:0 0 40px 0 #29353B0A;box-shadow:0 0 40px 0 #29353B0A;padding:20px;border-radius:12px}
+.paw_grid .paw_winner img{border-radius:12px}
+.paw_grid .paw_winner .paw_name{margin-block:10px 0;font-weight:600;color:#29353b}
+.paw_simple_winners{font-weight:600;color:var(--t-color)}
 .st_campaign h1{margin-bottom:var(--space-3)}
 .st_campaign_inner .wp-post-image{margin-bottom:var(--space-2)}
 .st_campaign_inner .campaign_subtitle{font-family:Libre Franklin,sans-serif}
@@ -412,7 +443,7 @@ input.gform_previous_button{background-color:transparent}
 .st_campaign_inner .campaign_sponsors h2{margin-bottom:4rem}
 .st_campaign_inner .campaign_sponsors_logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4rem}
 .st_campaign_inner .campaign_sponsors_logos img{aspect-ratio:23 / 10;-o-object-fit:contain;object-fit:contain;-o-object-position:center;object-position:center}
-.st_campaign_stats{-webkit-box-shadow:0 0 40px 0 #29353B0A;box-shadow:0 0 40px 0 #29353B0A;border:2px solid #f0eeeb;padding:24px;position:sticky;top:24px;border-radius:24px}
+.st_campaign_stats{-webkit-box-shadow:0 0 40px 0 #29353B0A;box-shadow:0 0 40px 0 #29353B0A;border:2px solid #f0eeeb;padding:24px;position:sticky;top:7rem;border-radius:24px}
 .st_campaign_stats .stats_top{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:2px solid #f0eeeb;border-radius:12px 12px 0 0}
 .st_campaign_stats .stats_top>div:not(:last-child){border-right:2px solid #f0eeeb}
 .st_campaign_stats .stats_top>div{text-align:center;padding:2rem;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
@@ -421,6 +452,7 @@ input.gform_previous_button{background-color:transparent}
 .st_campaign_stats .badge svg{margin-right:15px}
 .campaign_btn{margin-block:24px;width:100%}
 .st_page_intro_inner{border-bottom:1px solid #f0eeeb}
+.st_page_intro.no_border .st_page_intro_inner{border-bottom:0}
 .st_short_banner_inner{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding-inline:24px;border:2px solid #29353B1A;border-radius:12px}
 .st_short_banner_inner .short_banner_preview{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .st_short_banner_inner .short_banner_preview img{-o-object-position:bottom;object-position:bottom;-o-object-fit:contain;object-fit:contain}
@@ -441,7 +473,7 @@ input.gform_previous_button{background-color:transparent}
 .pwu_buttons{display:-webkit-box;display:-ms-flexbox;display:flex;margin-top:var(--space-4)}
 .download_btn{color:#007f9b;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .download_btn svg{margin-right:8px}
-.st_accordion-item{margin-bottom:2.4rem 4.8rem 2.4rem 2.4rem;background-color:#f0eeeb;border-radius:12px}
+.st_accordion-item{margin-bottom:2.4rem;background-color:#f0eeeb;border-radius:12px}
 .st_accordion-item .st_accordion-header{cursor:pointer;padding:2.4rem;font-size:18px;font-family:Libre Franklin,sans-serif;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:0}
 .st_accordion-item .st_accordion-header svg{-webkit-transition:var(--st);transition:var(--st);position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);right:2.9rem;width:16px;height:16px}
 .st_accordion-item .st_accordion-header .open_icon{opacity:0}
@@ -497,6 +529,7 @@ input.gform_previous_button{background-color:transparent}
 .gform_fields .gfield input.small{width:calc(33% - 8px)}
 .st_gas_section_inner{display:grid;grid-template-columns:1fr 2fr;gap:4rem}
 .st_gas_section_inner .gas_section_left{padding-right:4rem}
+.button_after_boxes{margin-left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}
 .st_featured_event_inner .fe_left{padding:4rem}
 .st_featured_campaign_inner{padding:4rem}
 .st_donation_intro{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-wrap:wrap;flex-wrap:wrap}
@@ -517,17 +550,22 @@ footer .footer_contact .col:last-child{grid-column:1 / 3}
 .st_counters_inner{grid-template-columns:repeat(2,minmax(0,1fr))}
 .st_instagram_images{grid-template-columns:repeat(2,minmax(0,1fr))}
 .st_logos_inner{grid-template-columns:repeat(3,minmax(0,1fr))}
+.st_donation_form .donation_radio_buttons .gfield_radio{grid-template-columns:repeat(3,minmax(0,1fr))}
 .st_donation_form fieldset.donation_type .gfield_radio{grid-template-columns:repeat(2,minmax(0,1fr))}
-.st_donation_form fieldset.donation_type .gfield_radio .gchoice_4_27_2{grid-column:1 / 3}
+.st_donation_form fieldset.donation_type .gfield_radio .gchoice:nth-child(3){grid-column:1 / 3}
 .team_section_inner{grid-template-columns:repeat(2,minmax(0,1fr))}
 }@media(min-width:834.6px){:root{--site-width:90%}
 body{font-size:18px}
+.sub-menu{display:none !important}
 .block_bg .mob_bg{display:none}
 .gas_item>div{width:calc(50% - 2rem)}
 .st_gas_hero_inner{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-wrap:wrap;flex-wrap:wrap}
 .st_gas_hero_inner>div{width:calc(50% - 2rem)}
 .st_gas_hero_inner .left{padding-right:4rem}
 .gas_resource{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.single-grant-winner .single_grant_winner_content{display:grid;grid-template-columns:300px 1fr;-webkit-column-gap:4.8rem;-moz-column-gap:4.8rem;column-gap:4.8rem}
+.single-grant-winner .single_grant_top{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;position:sticky;top:7rem}
+.st_info_boxes.style-5.cols-3 .st_col:nth-child(10):last-child{grid-column:2 / 3}
 .st_instagram_top .title-2{margin-block:0}
 .st_cta_inner .st_cta_left{width:58%;padding-block:4rem}
 .st_cta_inner .st_cta_right{width:34%}
@@ -559,6 +597,7 @@ body{font-size:18px}
 .st_section_inner.tab-img-first>div,.st_section_inner.tab-ib-first>div{width:48%}
 .st_contact_block_inner>div{width:48%}
 }@media(min-width:834.6px) and (max-width:1199.5px){html{font-size:7px}
+.paw_grid,.paw_simple{grid-template-columns:repeat(3,minmax(0,1fr))}
 .st_campaign_stats .stats_top{grid-template-columns:1fr}
 .st_campaign_stats .stats_top>div:not(:last-child){border-right:0;border-bottom:2px solid #f0eeeb}
 .team_section_inner{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -601,7 +640,7 @@ body{font-size:18px}
 .header-main .site-logo{width:200px;max-width:50%;margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;max-height:calc(100% - 15px)}
 .header-main img{height:100%;-o-object-fit:contain;object-fit:contain;width:100%}
 .header-main .main-navigation ul{display:none}
-.header-main #primary-menu{position:absolute;width:100%;height:calc(100vh - 69px);overflow:auto;background-color:#fff;left:0;margin-top:9px;padding:25px;z-index:9}
+.header-main #primary-menu{position:absolute;width:100%;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;overflow:auto;background-color:#fff;left:0;padding:25px;z-index:9;max-height:calc(100vh - 210px)}
 .header-main #primary-menu li{position:relative;display:grid;-webkit-box-align:center;-ms-flex-align:center;align-items:center;grid-template-columns:calc(100% - 55px) 25px;-webkit-column-gap:30px;-moz-column-gap:30px;column-gap:30px}
 .header-main #primary-menu li a{padding:1rem 1.5rem;color:var(--t-color);opacity:.75;font-size:20px;width:100%;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}
 .header-main #primary-menu li.current-menu-item a{opacity:1}
@@ -621,7 +660,7 @@ body{font-size:18px}
 .menu-toggle:checked+div{background:rgba(0,0,0,0)}
 .menu-toggle:checked+div:before{top:0;-webkit-transform:rotate(45deg);transform:rotate(45deg);background:black}
 .menu-toggle:checked+div:after{top:0;-webkit-transform:rotate(135deg);transform:rotate(135deg);background:black}
-.nav_buttons{position:fixed;bottom:1rem;left:1rem;width:calc(100% - 2rem);gap:1rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding-top:0}
+.nav_buttons{position:fixed;bottom:-100%;left:1rem;width:calc(100vw - 2rem);gap:1rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));-webkit-transition:var(--st);transition:var(--st);padding-top:0}
 .nav_buttons .button_1{background-color:#fff}
 .nav_buttons .button_1,.nav_buttons .button_2{width:100%;margin:0;padding-block:1rem}
 footer .footer_main .footer_menu{width:30%}
@@ -644,6 +683,7 @@ footer .footer_bottom .tos_menu ul{-webkit-box-pack:center;-ms-flex-pack:center;
 .gas_resource .resource_info svg{grid-row:1 / 2;grid-column:1 / 2;width:24px;margin-right:0}
 .gas_resource .resource_info .resource_file{grid-column:1 / 3;grid-row:2 / 3;padding-top:24px}
 .gas_resource a{grid-row:1 / 2;grid-column:2 / 3;margin-left:auto}
+.st_mega_menu{display:none}
 .st_featured_event_inner{grid-template-columns:1fr}
 .st_featured_campaign_inner{grid-template-columns:1fr}
 .st_featured_campaign_inner::before{-webkit-transform:translate(-2.5rem,-5rem);transform:translate(-2.5rem,-5rem)}
@@ -657,6 +697,7 @@ footer .footer_bottom .tos_menu ul{-webkit-box-pack:center;-ms-flex-pack:center;
 .st_advanced_section_inner{grid-template-columns:1fr}
 .st_advanced_section_inner .info_boxes{margin-bottom:4rem}
 .st_donation_form fieldset.donation_frequency .gfield_radio{grid-template-columns:1fr}
+.paw_grid,.paw_simple{grid-template-columns:repeat(2,minmax(0,1fr))}
 .st_campaign_stats{margin-top:4rem}
 .st_short_banner_inner{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .st_short_banner_inner .short_banner_preview{-webkit-box-ordinal-group:4;-ms-flex-order:3;order:3}
@@ -683,6 +724,9 @@ footer .footer_main .footer_menu{width:100%}
 .mob-cols-2 .st_info_boxes_inner{grid-template-columns:1fr 1fr}
 .mob-cols-3 .st_info_boxes_inner{grid-template-columns:repeat(3,1fr)}
 .posts_grid .grid_item{width:100%}
+.single-grant-winner .total_allocations_inner{font-size:20px}
+.single-grant-winner .grant_winner_selector{margin-top:4rem}
+.single-grant-winner .grant_name{font-size:20px}
 .st_testimonial_content .testimonial_content{font-size:3rem}
 .st_counters_inner{grid-template-columns:1fr}
 .st_instagram_images{grid-template-columns:1fr}
@@ -690,6 +734,7 @@ footer .footer_main .footer_menu{width:100%}
 .st_cta_inner .st_cta_text{font-size:16px}
 .st_inner_hero_2_inner .hero-link{text-align:center;width:100%;margin-top:3.2rem;margin-left:0;display:block}
 .st_logos_inner{grid-template-columns:1fr}
+.st_donation_form .donation_radio_buttons .gfield_radio{grid-template-columns:repeat(2,minmax(0,1fr))}
 .st_donation_form fieldset.donation_type .gfield_radio{grid-template-columns:1fr}
 .st_campaign_stats .stats_top{grid-template-columns:1fr}
 .st_campaign_stats .stats_top>div:not(:last-child){border-right:0;border-bottom:2px solid #f0eeeb}

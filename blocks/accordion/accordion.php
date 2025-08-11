@@ -53,7 +53,7 @@ if ( ! empty( $padding) ) {
 						$tb_title = $toggle_button['title'];
 						$tb_target = $toggle_button['target'] ? $toggle_button['target'] : '_self';
 						?>
-						<a class="toggle_button" href="<?php echo esc_url( $tb_url ); ?>" target="<?php echo esc_attr( $tb_target ); ?>"><?php echo esc_html( $tb_title ); ?></a>
+						<a class="btn-1" href="<?php echo esc_url( $tb_url ); ?>" target="<?php echo esc_attr( $tb_target ); ?>"><?php echo esc_html( $tb_title ); ?></a>
 					<?php endif; ?>
 				</div>
 			</div>

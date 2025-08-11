@@ -43,13 +43,13 @@ label[for="nav-toggle"] {
 		#primary-menu {
 			position: absolute;
 			width: 100%;
-			height: calc(100vh - 69px);
+			height: fit-content;
 			overflow: auto;
 			background-color: #fff;
 			left: 0;
-			margin-top: 9px;
 			padding: 25px;
 			z-index: 9;
+			max-height: calc(100vh - 210px);
 			li {
 				position: relative;
 				display: grid;
@@ -173,11 +173,12 @@ label[for="nav-toggle"] {
 .nav_buttons {
 	@include limbo-max {
 		position: fixed;
-		bottom: 1rem;
+		bottom: -100%;
 		left: 1rem;
 		width: calc(100vw - 2rem);
 		gap: 1rem;
 		@include grid-2;
+		@include st;
 		padding-top: 0;
 		.button_1 {
 			background-color: #fff;

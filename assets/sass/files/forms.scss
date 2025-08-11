@@ -71,6 +71,28 @@
 	}
 }
 
+fieldset:not(.donation_type):not(.donation_frequency):not(.donation_radio_buttons) {
+	.ginput_container_radio {
+		input {
+			display: none;
+		}
+		label {
+			background-image: url(../icons/donate-circle.svg);
+			background-repeat: no-repeat;
+			background-position: center left;
+			padding-left: 26px;
+			background-size: 18px;
+			font-size: 16px;
+			color: #000000;
+			font-weight: 400;
+			cursor: pointer;
+		}
+		input:checked + label{
+			background-image: url(../icons/check-circle.svg);
+		}
+	}
+}
+
 .gfield--input-type-html {
 	font-size: 16px;
 	margin-top: -16px;
@@ -88,7 +110,7 @@ fieldset {
 		}
 		input:checked + label {
 			&:after {
-				background-image: url(../icons/donate-check-circle.svg);
+				background-image: url(../icons/check-circle.svg);
 			}
 		}
 		label {
@@ -187,7 +209,7 @@ input {
     position: absolute !important;
 }
 
-.gfield--type-total, .gfield_visibility_hidden, .hidden_label legend.gform-field-label {
+.gfield--type-total, .gfield_visibility_hidden, .hidden_label legend.gform-field-label, .hidden_label .gfield_label {
 	display: none!important;
 }
 

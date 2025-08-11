@@ -1,0 +1,54 @@
+.paw_winners_year, .paw_simple {
+	&:not(:first-child) {
+		padding-top: 4rem;
+		border-top: 1px solid #F0EEEB;
+	}
+	&:not(:last-child) {
+		padding-bottom: 4rem;
+	}
+}
+
+.paw_video iframe {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	border-radius: 12px;
+}
+
+.paw_year {
+	font-size: 24px;
+	font-family: $secondary;
+}
+
+.paw_grid, .paw_simple  {
+	@include grid-4;
+	gap: 24px;
+	@include limbo-only {
+		@include col-3;
+	}
+	@include tab-max {
+		@include col-2;
+	}
+}
+.paw_grid {
+	.paw_winner {
+		background-color: #fff;
+		border: 2px solid #F0EEEB;
+		box-shadow: 0px 0px 40px 0px #29353B0A;
+		padding: 20px;
+		border-radius: 12px;
+		img {
+			border-radius: 12px;
+		}
+		.paw_name {
+			margin-block: 10px 0;
+			font-weight: 600;
+			color: #29353B;
+		}
+	}
+}
+
+.paw_simple_winners {
+	font-weight: 600;
+	color: var(--t-color);
+}

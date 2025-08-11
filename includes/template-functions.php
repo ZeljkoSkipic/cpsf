@@ -117,12 +117,12 @@ if (function_exists('acf_add_options_page')) {
 		'menu_title'    => 'Footer',
 		'parent_slug'   => 'site-general-settings',
 	));
-
-
-	acf_add_options_sub_page(array(
-		'page_title'    => 'External Scripts',
-		'menu_title'    => 'External Scripts',
-		'parent_slug'   => 'site-general-settings',
+	acf_add_options_page( array(
+		'page_title' => 'Mega menu',
+		'menu_slug' => 'mega-menu',
+		'parent_slug' => 'themes.php',
+		'position' => '',
+		'redirect' => false,
 	));
 }
 
@@ -235,11 +235,11 @@ function register_acf_blocks()
 	register_block_type(__DIR__ . '/../blocks/gas/grant-report');
 	register_block_type(__DIR__ . '/../blocks/gas/grant-resources');
 	register_block_type(__DIR__ . '/../blocks/gas/nominate');
-	register_block_type(__DIR__ . '/../blocks/gas/past-winners');
+	register_block_type(__DIR__ . '/../blocks/gas/past-grant-winners');
+	register_block_type(__DIR__ . '/../blocks/gas/past-award-winners');
 
 	register_block_type(__DIR__ . '/../blocks/accordion');
 	register_block_type(__DIR__ . '/../blocks/tabs');
-	register_block_type(__DIR__ . '/../blocks/info-boxes');
 	register_block_type(__DIR__ . '/../blocks/basic-section');
 	register_block_type(__DIR__ . '/../blocks/contact');
 	register_block_type(__DIR__ . '/../blocks/carousel');

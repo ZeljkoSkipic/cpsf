@@ -1,13 +1,13 @@
 <?php
 
-$class = 'st_block st_gas_section st_gas_resources space_2';
+$class = 'st_block st_gas_section st_gas_resources container space_2';
 if ( ! empty( $block['className'] ) ) {
     $class .= ' ' . $block['className'];
 }
 
 ?>
 <section id="resources" class="<?php echo $class ?>">
-	<div class="container st_gas_section_inner st_gas_resources_inner">
+	<div class="st_gas_section_inner st_gas_resources_inner">
 		<div class="gas_section_left">
 			<h2 class="title-3">Resources</h2>
 		</div>

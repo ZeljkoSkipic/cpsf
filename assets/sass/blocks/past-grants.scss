@@ -2,9 +2,20 @@
 	@include flex-between;
 	border-bottom: 1px solid #F0EEEB;
 	padding-bottom: 4rem;
+	.left {
+		@include flex;
+		#total-allocation-display, #total-grants-display {
+			color: var(--t-color);
+			font-weight: 600;
+		}
+		#total-allocation-display {
+			margin-right: 4px;
+		}
+	}
 	.prefix {
 		margin-block: 0 8px;
 		font-weight: 500;
+		width: 100%;
 	}
 	.year-dropdown {
 		border: none;
@@ -14,6 +25,7 @@
 		width: 110px;
 		cursor: pointer;
 		outline: none;
+		font-weight: 600;
 		option {
 			background-color: transparent;
 			font-size: 16px;

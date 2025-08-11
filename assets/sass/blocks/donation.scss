@@ -106,6 +106,39 @@
 		}
 	}
 
+	.donation_radio_buttons {
+		.gfield_radio {
+			@include grid-5;
+			gap: 8px;
+			@include tab-only {
+				@include col-3;
+			}
+			@include mob-only {
+				@include col-2;
+			}
+			input {
+				display: none
+			}
+			.gchoice  {
+				label {
+					border: 1px solid;
+					width: 100%;
+					display: flex;
+					color: var(--t-color);
+					font-size: 16px;
+					font-weight: 400;
+					padding: 12px;
+					box-sizing: border-box;
+					cursor: pointer;
+				}
+				input:checked + label {
+					background-color: #000;
+					color: #fff;
+				}
+			}
+		}
+	}
+
 
 	fieldset.donation_frequency {
 		.gfield_radio {
@@ -131,9 +164,30 @@
 			@include mob-only {
 				@include col-1;
 			}
-			.gchoice_4_27_2 {
-				@include tab-only {
-					grid-column: 1 / 3;
+			.gchoice {
+				&:first-child {
+					label {
+						&:before {
+							content: url(../icons/donate-individual.svg);
+						}
+					}
+				}
+				&:nth-child(2) {
+					label {
+						&:before {
+							content: url(../icons/donate-household.svg);
+						}
+					}
+				}
+				&:nth-child(3) {
+					@include tab-only {
+						grid-column: 1 / 3;
+					}
+					label {
+						&:before {
+							content: url(../icons/donate-business.svg);
+						}
+					}
 				}
 			}
 			label {
@@ -141,22 +195,6 @@
 				word-break: break-all;
 				font-size: 13px;
 				color: #000;
-				&#label_4_27_0 {
-					&:before {
-						content: url(../icons/donate-individual.svg);
-					}
-				}
-				&#label_4_27_1 {
-					&:before {
-						content: url(../icons/donate-household.svg);
-					}
-				}
-				&#label_4_27_2 {
-
-					&:before {
-						content: url(../icons/donate-business.svg);
-					}
-				}
 			}
 		}
 	}

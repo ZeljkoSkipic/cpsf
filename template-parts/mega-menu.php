@@ -278,34 +278,48 @@
 
         <!-- Second Column: Child Pages of Page 658 - about-->
         <div class="mm_col mm_child_column">
-            <?php
-            $child_pages = get_posts(array(
-                'post_type' => 'page',
-                'post_parent' => 658,
-                'posts_per_page' => 15,
-                'post_status' => 'publish',
-                'orderby' => 'menu_order',
-                'order' => 'ASC'
-            ));
+			<?php
 
-            if ($child_pages) {
-                foreach ($child_pages as $post) {
-                    setup_postdata($post); ?>
+			if( have_rows('about_mm_items', 'option') ): ?>
 
-                    <a class="mm_grant_item" href="<?php echo esc_url(get_permalink()); ?>">
-                        <p class="mm_item_title">
-                            <?php echo esc_html(get_the_title()); ?>
-                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 13L7 7L1 1" stroke="#007F9B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </p>
-						<div class="mm_item_excerpt">
-							<?php echo wp_kses_post( get_field('mm_excerpt') ); ?>
-						</div>
-                    </a>
+				<?php while( have_rows('about_mm_items', 'option') ) : the_row(); ?>
 
-                <?php }
-                wp_reset_postdata();
-            }
-            ?>
+				<?php
+				$about_anchor_title = get_sub_field('about_anchor_title');
+				$about_anchor = get_sub_field('about_anchor');
+				$about_anchor_excerpt = get_sub_field('about_anchor_excerpt'); ?>
+
+				<a class="mm_grant_item" href="<?php echo esc_url(get_permalink(658)); ?>#<?php echo $about_anchor; ?>">
+					<p class="mm_item_title">
+						<?php echo $about_anchor_title; ?>
+						<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 13L7 7L1 1" stroke="#007F9B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					</p>
+					<div class="mm_item_excerpt">
+						<?php echo $about_anchor_excerpt; ?>
+					</div>
+				</a>
+
+				<?php endwhile; ?>
+
+			<?php endif; ?>
         </div>
+		<div class="mm_col mm_child_column">
+			<?php
+			$specific_page = get_post(723);
+			if ($specific_page && $specific_page->post_status === 'publish') { ?>
+
+				<a class="mm_grant_item" href="<?php echo esc_url(get_permalink(723)); ?>">
+					<p class="mm_item_title">
+						<?php echo esc_html($specific_page->post_title); ?>
+						<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 13L7 7L1 1" stroke="#007F9B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					</p>
+					<div class="mm_item_excerpt">
+						<?php echo wp_kses_post( get_field('mm_excerpt', $specific_page) ); ?>
+					</div>
+				</a>
+
+			<?php }
+			?>
+		</div>
     </div>
 </div>

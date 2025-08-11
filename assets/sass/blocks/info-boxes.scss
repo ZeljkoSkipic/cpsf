@@ -78,6 +78,15 @@
 				font-weight: 600;
 			}
 		}
+		&.cols-3 {
+			.st_col {
+				@include limbo-min {
+					&:nth-child(10):last-child {
+						grid-column: 2 / 3;
+					}
+				}
+			}
+		}
 	}
 	&.style-6 {
 		&.cols-3 {
@@ -122,6 +131,8 @@
 
 .button_after_boxes {
 	margin-top: var(--space-3);
-	margin-left: 50%;
+	@include tab-min {
+		margin-left: 50%;
 	transform: translateX(-50%);
+	}
 }
